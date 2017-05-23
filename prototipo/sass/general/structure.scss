@@ -1,0 +1,95 @@
+/**
+* Style STRUCTURE
+* @version: 1.0
+* Copyright(c) -- Jazida
+*/
+
+/* IMPORT FONTS
+________________________________________________________________ */
+
+//@include font-face($font-family-gt, 'gt-walsheim-thin',             '../fonts/', $font-weight-thin, 'normal');
+// @include font-face($font-family-gt, 'gt-walsheim-thin-oblique',     '../fonts/', 200, 'oblique');
+//@include font-face($font-family-gt, 'gt-walsheim-light',            '../fonts/', $font-weight-light, 'normal');
+// @include font-face($font-family-gt, 'gt-walsheim-light-oblique',    '../fonts/', 300, 'oblique');
+//@include font-face($font-family-gt, 'gt-walsheim-regular',          '../fonts/', $font-weight-normal, 'normal');
+// @include font-face($font-family-gt, 'gt-walsheim-regular-oblique',  '../fonts/', 400, 'oblique');
+//@include font-face($font-family-gt, 'gt-walsheim-bold',             '../fonts/', $font-weight-bold, 'normal');
+// @include font-face($font-family-gt, 'gt-walsheim-bold-oblique',     '../fonts/', 700, 'oblique');
+
+
+/* ELEMENTS
+________________________________________________________________ */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*, *:focus { outline: none; }
+
+html {
+	height: 100%;
+	//font-size: 10px;
+	//line-height: 1.24;
+}
+
+body {
+	background-color: $body-bg;
+	color: $text-color;
+	//font-family: $font-family-gt;
+	height: 100%;
+
+	&.loading {
+		overflow: hidden;
+	}
+}
+
+header, main, footer, .score__footer {
+	
+}
+
+main {
+	
+}
+
+a {
+	
+}
+
+/* SELEÇÃO
+	>> Cor de seleção do texto
+________________________________________________________________ */
+
+@include selection-custom($color-pink, $color-white);
+
+/* ELEMENT SPECIALIZATION 
+________________________________________________________________ */
+
+.no-style {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* CLASSES
+________________________________________________________________ */
+
+#general {
+	@include clearfix;
+}
+
+.center {
+	@include clearfix;
+	width: 100%;
+
+	@include desktop {
+		margin: 0 auto;
+		max-width: $content-large-desktop;
+		position: relative;
+	}
+}
+
+.clearfix {
+	@include clearfix();
+}
