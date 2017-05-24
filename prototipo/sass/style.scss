@@ -21,8 +21,11 @@ ________________________________________________________________ */
 @import 'mixins/mixins';
 @import 'general/structure';
 @import 'general/header';
+@import 'general/main';
+@import 'general/footer';
 
 /* Components
 ________________________________________________________________ */
 
 @import 'components/buttons';
+@import 'components/form-fields';

@@ -16,7 +16,7 @@ ________________________________________________________________ */
 	margin-bottom: 0;
 	position: relative;
 	text-align: center;
-    text-decoration: none;
+  text-decoration: none;
 	touch-action: manipulation;
 	vertical-align: baseline;
 	white-space: nowrap;
@@ -96,6 +96,7 @@ ________________________________________________________________ */
 .btn-white {
 	@include buttons-variation( $btn-white-color, $btn-white-bg, $btn-white-border, $btn-white-hover );
 	@include button-loading($btn-white-color);
+	text-transform: uppercase;
 
 	&:active, &:focus, &:hover {
 		background-color: rgba($color-white, 0.1);
@@ -160,6 +161,13 @@ ________________________________________________________________ */
 			text-decoration: none;
 		}
 	}
+}
+
+/* Floating Button
+________________________________________________________________ */
+
+.btn-floating {
+	@include border-radius(50%);
 }
 
 /* Buttons Size
