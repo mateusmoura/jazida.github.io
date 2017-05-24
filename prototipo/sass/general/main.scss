@@ -223,6 +223,56 @@ ________________________________________________________________ */
     }
   }
 
+  /* MAIN
+    >> Sections
+      >> Sixth
+________________________________________________________________ */
+
+  &:nth-child(6) {
+    background-color: $color-green;
+
+    h3 {
+      @include font-size(50);
+      color: $text-color-2;
+      font-weight: $font-weight-thin;
+      margin: 0 0 40px 0px;
+      text-transform: uppercase;
+    }
+
+    .section__index {
+      @include transform(translateY(-50%));
+      padding: 0 0 0 40px;
+      position: relative;
+      top: 50%;
+      width: 50%;
+      z-index: 3;
+    }
+    
+    .form {
+      &__group {
+        margin-bottom: 12px;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+    }
+
+    .section__image {
+      margin: 0;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
 /* MAIN
     >> Sections
       >> Block
