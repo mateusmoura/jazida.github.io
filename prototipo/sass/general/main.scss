@@ -109,6 +109,19 @@ ________________________________________________________________ */
 
 /* MAIN
     >> Sections
+      >> Third
+________________________________________________________________ */
+
+  &:nth-child(3) {
+    background: url('../img/bkg/section-green.png') no-repeat center top;
+
+    @media (min-width: 1380px) {
+      @include background-size;
+    }
+  }
+
+/* MAIN
+    >> Sections
       >> Block
 ________________________________________________________________ */
 
