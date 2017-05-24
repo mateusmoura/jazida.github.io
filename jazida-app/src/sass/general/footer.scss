@@ -1,0 +1,44 @@
+/**
+* Style FOOTER
+* @version: 1.0
+* Copyright(c) -- Footer
+*/
+
+/* Footer
+________________________________________________________________ */
+
+footer {
+  background: url("../img/bkg/footer.png") no-repeat center top;
+  position: relative;
+  min-height: 180px;
+  margin-top: -70px;
+  z-index: 10;
+
+  @media (min-width: 1390px) {
+    @include background-size;
+  }
+
+  .center {
+    align-items: center;
+    display: flex;
+    //justify-content: center;
+    min-height: 180px;
+    padding-top: 45px;
+  }
+
+  p {
+    @include font-size(16);
+    color: $color-white;
+
+    a.btn-link {
+      display: block;
+      text-align: left;
+    }
+  }
+
+  h3 {
+    display: block;
+    position: relative;
+    left: 22%;
+  }
+}
