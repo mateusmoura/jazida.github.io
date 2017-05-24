@@ -189,6 +189,23 @@ ________________________________________________________________ */
 	filter: "alpha(opacity=#{$opacity-ie})";
 }
 
+@mixin text-rotate ($args) {
+	/* Safari */
+	-webkit-transform: rotate($args);
+
+	/* Firefox */
+	-moz-transform: rotate($args);
+
+	/* IE */
+	-ms-transform: rotate($args);
+
+	/* Opera */
+	-o-transform: rotate($args);
+
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=floor(($args*4)/100) );
+}
+
 @mixin selection-custom($bg: #94bb24, $letter: #fff){
 	*::-moz-selection{
 		background: none repeat scroll 0 0 $bg;

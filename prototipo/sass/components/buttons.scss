@@ -127,6 +127,25 @@ ________________________________________________________________ */
 		top: 2px;
 	}
 }
+// Button BROWN
+.btn-brown {
+	@include buttons-variation( $btn-brown-color, $btn-brown-bg, $btn-brown-border, $btn-brown-hover, $btn-brown-bg-hover );
+	@include button-loading($btn-brown-color);
+
+    &-full {
+        @include buttons-variation( $color-white, $btn-brown-color, $btn-brown-border, $btn-brown-hover );
+        @include button-loading($color-white);
+        background-image: linear-gradient(180deg, #85D17C 0%, $color-green 100%);
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+
+        &[disabled] {
+            background-image: none;
+            background-color: $color-gray;
+            border-color: $color-gray;
+        }
+    }
+}
 
 /* Link Button
 ________________________________________________________________ */
@@ -168,6 +187,41 @@ ________________________________________________________________ */
 
 .btn-floating {
 	@include border-radius(50%);
+	@include font-size(40);
+	border: 0;
+	height: 30px;
+	padding: 0;
+	line-height: 30px;
+	width: 30px;
+
+	&-bottom {
+		@include text-rotate(-46deg);
+	}
+
+	&-top {
+		@include text-rotate(132deg);
+	}
+
+	&.btn-brown {
+		color: $color-green;
+	}
+
+	&.btn-green {
+		color: $color-brown;
+	}
+
+	span {
+		left: 2px;
+		position: relative;
+		top: -5px;
+	}
+	
+	&.btn-floating-top {
+		span {
+			left: 3px;
+			top: -6px;
+		}
+	}
 }
 
 /* Buttons Size
