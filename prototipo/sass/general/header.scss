@@ -8,5 +8,34 @@
 ________________________________________________________________ */
 
 header {
+    @include clearfix;
     background-color: $color-white;
+    max-height: 80px;
+
+    .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 {
+       // display: inline-block;
+        //float: left;
+        flex-grow: 1;
+        width: 20%;
+    }
+
+    nav {
+        //display: inline-block;
+        //float: right;
+        flex-grow: 2;
+        text-align: right;
+        width: 75%;
+        
+
+        a {
+            text-transform: uppercase;
+            margin: 0 20px;
+        }
+    }
 }

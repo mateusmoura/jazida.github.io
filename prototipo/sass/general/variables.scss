@@ -8,7 +8,8 @@
 ________________________________________________________________ */
 
 // Project pallete
-$color-green:                    #72c169;
+$color-green:                    #30b77f;
+$color-green-light:              #44d392;
 $color-avocado:                  #bec532;
 $color-yellow:                   #f7ae2c;
 $color-orange:                   #f28c2b;
@@ -65,11 +66,12 @@ $landscape:                      'orientation: landscape';
 ________________________________________________________________ */
 
 //$font-family-icons:              '';
-$font-family-gt:                 'GTWalsheim';
+$font-family:                   'Titillium Web', sans-serif;
 $font-weight-thin:               200;
 $font-weight-light:              300;
 $font-weight-normal:             400;
 $font-weight-bold:               700;
+$font-weight-dark:               900;
 
 /* BUTTONS
 ________________________________________________________________ */
@@ -94,65 +96,21 @@ $btn-primary-bg:                 $color-pink;
 $btn-primary-border:             none;
 $btn-primary-hover:              $color-pink;
 
-$btn-green-color:                $color-green;
-$btn-green-bg:                   transparent;
+$btn-green-color:                $color-white;
+$btn-green-bg:                   $color-green;
 $btn-green-border:               $color-green;
 $btn-green-hover:                $color-green;
-
-$btn-avocado-color:              $color-avocado;
-$btn-avocado-bg:                 transparent;
-$btn-avocado-border:             $color-avocado;
-$btn-avocado-hover:              $color-avocado;
-
-$btn-yellow-color:               $color-yellow;
-$btn-yellow-bg:                  transparent;
-$btn-yellow-border:              $color-yellow;
-$btn-yellow-hover:               $color-yellow;
-
-$btn-orange-color:               $color-orange;
-$btn-orange-bg:                  transparent;
-$btn-orange-border:              $color-orange;
-$btn-orange-hover:               $color-orange;
-
-$btn-coral-color:                $color-coral;
-$btn-coral-bg:                   transparent;
-$btn-coral-border:               $color-coral;
-$btn-coral-hover:                $color-coral;
-
-$btn-red-color:                  $color-red;
-$btn-red-bg:                     transparent;
-$btn-red-border:                 $color-red;
-$btn-red-hover:                  $color-red;
+$btn-green-bg-hover:             $color-white;
 
 $btn-pink-color:                 $color-pink;
 $btn-pink-bg:                    transparent;
 $btn-pink-border:                $color-pink;
 $btn-pink-hover:                 $color-pink;
 
-$btn-purple-color:               $color-purple;
-$btn-purple-bg:                  transparent;
-$btn-purple-border:              $color-purple;
-$btn-purple-hover:               $color-purple;
-
-$btn-eggplant-color:             $color-eggplant;
-$btn-eggplant-bg:                transparent;
-$btn-eggplant-border:            $color-eggplant;
-$btn-eggplant-hover:             $color-eggplant;
-
 $btn-white-color:                $color-white;
 $btn-white-bg:                   transparent;
 $btn-white-border:               $color-white;
 $btn-white-hover:                $color-white;
-
-$btn-blue-color                 : $color-blue;
-$btn-blue-bg                    : transparent;
-$btn-blue-border                : $color-blue;
-$btn-blue-hover                 : $color-blue;
-
-$btn-gray-color                 : $color-gray;
-$btn-gray-bg                    : transparent;
-$btn-gray-border                : $color-gray;
-$btn-gray-hover                 : $color-gray;
 
 $btn-link-disabled-color:        $color-gray-light;
 // Enable shadow
