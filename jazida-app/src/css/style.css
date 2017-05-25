@@ -1065,8 +1065,13 @@ ________________________________________________________________ */
   padding: 0;
   line-height: inherit;
   text-decoration: none; }
-  .btn-link, .btn-link:active, .btn-link.active, .btn-link[disabled] {
-    background-color: transparent; }
+  .btn-link:active, .btn-link.active, .btn-link[disabled] {
+    background-color: transparent;
+    color: #049b5c;
+    font-weight: 400;
+    text-decoration: underline; }
+    .btn-link:active:hover, .btn-link:active:focus, .btn-link:active:active, .btn-link.active:hover, .btn-link.active:focus, .btn-link.active:active, .btn-link[disabled]:hover, .btn-link[disabled]:focus, .btn-link[disabled]:active {
+      color: #049b5c; }
   .btn-link:hover, .btn-link:focus, .btn-link:active {
     border-color: transparent;
     text-decoration: underline; }

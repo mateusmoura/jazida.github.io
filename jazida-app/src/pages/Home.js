@@ -1,5 +1,22 @@
 import React, {Component} from 'react';
 
+import ImgMap from '../img/fke/maps.png';
+import ImgDashboard from '../img/fke/jazida-dashboard.png';
+import ImgTransparent from '../img/fke/jazida-transparent.png';
+import ImgFaster from '../img/fke/jazida-faster.png';
+import ImgIntegration from '../img/fke/jazida-integration.png';
+import ImgTry from '../img/fke/jazida-try.png';
+
+import SectionBrown from '../img/bkg/section-brown.png';
+import SectionGreen from '../img/bkg/section-green.png';
+
+import IconDoc from '../img/ico/doc.png';
+import IconBell from '../img/ico/bell.png';
+import IconMarker from '../img/ico/marker.png';
+import IconCloud from '../img/ico/cloud.png';
+import IconGear from '../img/ico/gear.png';
+import IconLock from '../img/ico/lock.png';
+
 export default class Home extends Component {
   render () {
     return (
@@ -30,20 +47,20 @@ export default class Home extends Component {
             </div>
 
             <div className="section__nav">
-              <button type="button" className="btn btn-floating btn-floating-bottom btn-brown"><span>&dlcorn;</span></button>
+              <button type="button" className="btn btn-floating btn-floating-bottom btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
             </div>
           </div>
 
           <div className="overlay"></div>
 
           <figure>
-            <img src="img/fke/maps.png" alt="Mapa do Brasil" />
+            <img src={ImgMap} alt="Mapa do Brasil" />
           </figure>
         </section>
 
         <section className="section">
           <div className="section__bg">
-            <img src="img/bkg/section-brown.png" alt="" />
+            <img src={SectionBrown} alt="" />
           </div>
 
           <div className="center">
@@ -65,20 +82,20 @@ export default class Home extends Component {
               </div>
 
               <div className="section__nav">
-                <button type="button" className="btn btn-floating btn-floating-top btn-green"><span>&dlcorn;</span></button>
-                <button type="button" className="btn btn-floating btn-floating-bottom btn-green"><span>&dlcorn;</span></button>
+                <button type="button" className="btn btn-floating btn-floating-top btn-green"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
+                <button type="button" className="btn btn-floating btn-floating-bottom btn-green"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
               </div>
             </div>
           </div>
 
           <figure className="section__image">
-            <img src="img/fke/jazida-dashboard.png" alt="Jazida Dashboard" />
+            <img src={ImgDashboard} alt="Jazida Dashboard" />
           </figure>
         </section>
 
         <section className="section">
           <div className="section__bg">
-            <img src="img/bkg/section-green.png" alt="" />
+            <img src={SectionGreen} alt="" />
           </div>
 
           <div className="center">
@@ -95,7 +112,7 @@ export default class Home extends Component {
                 <div className="list">
                   <div className="list__item">
                     <div className="list__item--left">
-                      <img src="img/ico/doc.png" alt="Leitura Automática do D.O.U" />
+                      <img src={IconDoc} alt="Leitura Automática do D.O.U" />
                     </div>
 
                     <div className="list__item--right">
@@ -106,7 +123,7 @@ export default class Home extends Component {
 
                   <div className="list__item">
                     <div className="list__item--left">
-                      <img src="img/ico/bell.png" alt="Alertas sobre prazos" />
+                      <img src={IconBell} alt="Alertas sobre prazos" />
                     </div>
 
                     <div className="list__item--right">
@@ -118,20 +135,20 @@ export default class Home extends Component {
               </div>
 
               <div className="section__nav">
-                <button type="button" className="btn btn-floating btn-floating-top btn-brown"><span>&dlcorn;</span></button>
-                <button type="button" className="btn btn-floating btn-floating-bottom btn-brown"><span>&dlcorn;</span></button>
+                <button type="button" className="btn btn-floating btn-floating-top btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
+                <button type="button" className="btn btn-floating btn-floating-bottom btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
               </div>
             </div>
           </div>
 
           <figure className="section__image">
-            <img src="img/fke/jazida-transparent.png" alt="Jazida Transparência" />
+            <img src={ImgTransparent} alt="Jazida Transparência" />
           </figure>
         </section>
 
         <section className="section">
           <div className="section__bg">
-            <img src="img/bkg/section-brown.png" alt="" />
+            <img src={SectionBrown} alt="" />
           </div>
 
           <div className="center">
@@ -148,7 +165,7 @@ export default class Home extends Component {
                 <div className="list">
                   <div className="list__item">
                     <div className="list__item--left">
-                      <img src="img/ico/marker.png" alt="Georreferenciamento Facilitado" />
+                      <img src={IconMarker} alt="Georreferenciamento Facilitado" />
                     </div>
 
                     <div className="list__item--right">
@@ -159,7 +176,7 @@ export default class Home extends Component {
 
                   <div className="list__item">
                     <div className="list__item--left">
-                      <img src="img/ico/cloud.png" alt="Dados na nuvem e versão mobile" />
+                      <img src={IconCloud} alt="Dados na nuvem e versão mobile" />
                     </div>
 
                     <div className="list__item--right">
@@ -171,20 +188,20 @@ export default class Home extends Component {
               </div>
 
               <div className="section__nav">
-                <button type="button" className="btn btn-floating btn-floating-top btn-green"><span>&dlcorn;</span></button>
-                <button type="button" className="btn btn-floating btn-floating-bottom btn-green"><span>&dlcorn;</span></button>
+                <button type="button" className="btn btn-floating btn-floating-top btn-green"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
+                <button type="button" className="btn btn-floating btn-floating-bottom btn-green"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
               </div>
             </div>
           </div>
 
           <figure className="section__image">
-            <img src="img/fke/jazida-faster.png" alt="Jazida Rapidez" />
+            <img src={ImgFaster} alt="Jazida Rapidez" />
           </figure>
         </section>
 
         <section className="section">
           <div className="section__bg">
-            <img src="img/bkg/section-green.png" alt="" />
+            <img src={SectionGreen} alt="" />
           </div>
 
           <div className="center">
@@ -201,7 +218,7 @@ export default class Home extends Component {
                 <div className="list">
                   <div className="list__item">
                     <div className="list__item--left">
-                      <img src="img/ico/gear.png" alt="Ferramentas multifunção" />
+                      <img src={IconGear} alt="Ferramentas multifunção" />
                     </div>
 
                     <div className="list__item--right">
@@ -212,7 +229,7 @@ export default class Home extends Component {
 
                   <div className="list__item">
                     <div className="list__item--left">
-                      <img src="img/ico/lock.png" alt="Informações protegidas" />
+                      <img src={IconLock} alt="Informações protegidas" />
                     </div>
 
                     <div className="list__item--right">
@@ -224,14 +241,14 @@ export default class Home extends Component {
               </div>
 
               <div className="section__nav">
-                <button type="button" className="btn btn-floating btn-floating-top btn-brown"><span>&dlcorn;</span></button>
-                <button type="button" className="btn btn-floating btn-floating-bottom btn-brown"><span>&dlcorn;</span></button>
+                <button type="button" className="btn btn-floating btn-floating-top btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
+                <button type="button" className="btn btn-floating btn-floating-bottom btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
               </div>
             </div>
           </div>
 
           <figure className="section__image">
-            <img src="img/fke/jazida-integration.png" alt="Jazida Integração" />
+            <img src={ImgIntegration} alt="Jazida Integração" />
           </figure>
         </section>
 
@@ -265,7 +282,7 @@ export default class Home extends Component {
           </div>
 
           <figure className="section__image">
-            <img src="img/fke/jazida-try.png" alt="Jazida Experimente grátis" />
+            <img src={ImgTry} alt="Jazida Experimente grátis" />
           </figure>
         </section>
       </div>

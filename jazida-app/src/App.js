@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import './App.scss';
 //import './App.css';
+import './css/normalize.css';
 import './css/style.css';
 //require("style-loader!css-loader!sass-loader!./sass/style.scss");
 

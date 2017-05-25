@@ -152,20 +152,27 @@ ________________________________________________________________ */
 
 .btn-link{
 	@include border-radius(0);
-    border: 0;
+  border: 0;
 	color: $color-green;
 	padding: 0;
 	line-height: inherit;
-    text-decoration: none;
+  text-decoration: none;
 
-	&, &:active, &.active, &[disabled]{
+	&:active, &.active, &[disabled]{
 		background-color: transparent;
+		color: $color-green-dark;
+		font-weight: $font-weight-normal;
+		text-decoration: underline;
 		//@include box-shadow(none);
+
+		&:hover, &:focus, &:active {
+			color: $color-green-dark;
+		}
 	}
 
 	&:hover, &:focus, &:active {
 		border-color: transparent;
-        text-decoration: underline;
+    text-decoration: underline;
 	}
 
 	&:hover, &:focus{
