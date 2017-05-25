@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 //import './App.css';
 import './css/normalize.css';
 import './css/style.css';
+import "../node_modules/animate.css/animate.min.css";
 //require("style-loader!css-loader!sass-loader!./sass/style.scss");
 
 import Header from './components/Header';

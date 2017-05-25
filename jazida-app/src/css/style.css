@@ -344,7 +344,7 @@ ________________________________________________________________ */
     >> Section
       >> Nav
 ________________________________________________________________ */ }
-  .section .center {
+  .section .center, .section > .animated {
     height: 100%; }
   .section__bg {
     left: 0;
@@ -975,7 +975,7 @@ ________________________________________________________________ */
   border-color: #51453f;
   color: #30b77f; }
   .btn-brown:hover, .btn-brown:focus, .btn-brown.focus, .btn-brown:active, .btn-brown.active {
-    background-color: #30b77f;
+    background-color: #ffffff;
     color: #51453f;
     border-color: #51453f; }
   .btn-brown:active, .btn-brown.active {
