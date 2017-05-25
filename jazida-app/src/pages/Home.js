@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
+import $ from 'jquery';
 
 import ImgMap from '../img/fke/maps.png';
 import ImgDashboard from '../img/fke/jazida-dashboard.png';
@@ -19,6 +20,33 @@ import IconGear from '../img/ico/gear.png';
 import IconLock from '../img/ico/lock.png';
 
 export default class Home extends Component {
+
+  constructor() {
+    super();
+
+    this.changeSection = this.changeSection.bind(this);
+  }
+
+  changeSection (event) {
+    event.preventDefault();
+    let element = $(event.currentTarget);
+    let parent = element.parents('section');
+    let section = [];
+    
+
+    if(element.hasClass('btn-floating-bottom')) {
+      section = parent.next('section').length ? parent.next('section') : false;
+    } else {
+      section = parent.prev('section').length ? parent.prev('section') : false;
+    }
+
+    console.log(section);
+    
+    if(section) {
+      $('html, body').animate({scrollTop: section.offset().top- 80}, 600);
+    }
+  }
+
   render () {
     return (
       <div>
@@ -50,7 +78,7 @@ export default class Home extends Component {
 
               <div className="section__nav">
                 <ScrollAnimation animateIn="fadeIn" delay={1000} infinityAnimation={false}>
-                  <button type="button" className="btn btn-floating btn-floating-bottom btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
+                  <button type="button" onClick={this.changeSection} className="btn btn-floating btn-floating-bottom btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
                 </ScrollAnimation>
               </div>
             </div>
@@ -96,8 +124,8 @@ export default class Home extends Component {
 
               <div className="section__nav">
                 <ScrollAnimation animateIn="fadeIn" delay={1000} infinityAnimation={false}>
-                  <button type="button" className="btn btn-floating btn-floating-top btn-green"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
-                  <button type="button" className="btn btn-floating btn-floating-bottom btn-green"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
+                  <button type="button" onClick={this.changeSection} className="btn btn-floating btn-floating-top btn-green"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
+                  <button type="button" onClick={this.changeSection} className="btn btn-floating btn-floating-bottom btn-green"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
                 </ScrollAnimation>
               </div>
             </div>
@@ -157,8 +185,8 @@ export default class Home extends Component {
 
               <div className="section__nav">
                 <ScrollAnimation animateIn="fadeIn" delay={1000} infinityAnimation={false}>
-                  <button type="button" className="btn btn-floating btn-floating-top btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
-                  <button type="button" className="btn btn-floating btn-floating-bottom btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
+                  <button type="button" onClick={this.changeSection} className="btn btn-floating btn-floating-top btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
+                  <button type="button" onClick={this.changeSection} className="btn btn-floating btn-floating-bottom btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
                 </ScrollAnimation>
               </div>
             </div>
@@ -216,8 +244,8 @@ export default class Home extends Component {
 
               <div className="section__nav">
                 <ScrollAnimation animateIn="fadeIn" delay={1000} infinityAnimation={false}>
-                  <button type="button" className="btn btn-floating btn-floating-top btn-green"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
-                  <button type="button" className="btn btn-floating btn-floating-bottom btn-green"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
+                  <button type="button" onClick={this.changeSection} className="btn btn-floating btn-floating-top btn-green"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
+                  <button type="button" onClick={this.changeSection} className="btn btn-floating btn-floating-bottom btn-green"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
                 </ScrollAnimation>
               </div>
             </div>
@@ -275,8 +303,8 @@ export default class Home extends Component {
 
               <div className="section__nav">
                 <ScrollAnimation animateIn="fadeIn" delay={1000} infinityAnimation={false}>
-                  <button type="button" className="btn btn-floating btn-floating-top btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
-                  <button type="button" className="btn btn-floating btn-floating-bottom btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
+                  <button type="button" onClick={this.changeSection} className="btn btn-floating btn-floating-top btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
+                  <button type="button" onClick={this.changeSection} className="btn btn-floating btn-floating-bottom btn-brown"><span dangerouslySetInnerHTML={{__html: `${"&dlcorn;"}`}}></span></button>
                 </ScrollAnimation>
               </div>
             </div>
