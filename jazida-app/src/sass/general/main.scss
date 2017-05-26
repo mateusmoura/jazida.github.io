@@ -93,6 +93,64 @@ ________________________________________________________________ */
       width: 50%;
       z-index: 2;
     }
+
+    .monitor {
+      @include border-radius(5px);
+      background-color: $color-white;
+      position: relative;
+
+      .btn-close {
+        @include font-size(22);
+        color: $color-gray;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .padded {
+        padding: 15px;
+      }
+
+      &__type {
+        @include font-size(14);
+        color: $color-gray-dark;
+        display: inline-block;
+        margin-bottom: 20px;
+        
+        i {
+          color: $color-green;
+          margin-right: 10px;
+        }
+      }
+
+      h6 {
+        @include font-size(18);
+        color: $color-green;
+        margin: 0 0 5px;
+      }
+
+      &__subtitle {
+        p {
+          @include font-size(16);
+          color: $color-gray-dark;
+          margin: 0;
+        }
+      }
+
+      .group__list {
+        p {
+          @include font-size(14);
+          color: $color-gray-dark;
+          margin: 0;
+        }
+
+        strong {
+          @include font-size(14);
+          color: $color-gray-dark;
+          margin: 0;
+        }
+      }
+    }
   }
 
 /* MAIN

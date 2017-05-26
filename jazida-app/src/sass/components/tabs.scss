@@ -1,0 +1,83 @@
+/**
+* Style TABS
+* @version: 1.0
+* Copyright(c) -- Jazida
+*/
+
+/* TABS
+________________________________________________________________ */
+
+.tabs {
+
+/* TABS
+  >> Nav 
+________________________________________________________________ */
+
+  nav {
+    border-bottom: solid 1px $color-gray;
+
+    a {
+      @include font-size(13);
+      color: $color-gray-dark;
+      display: inline-block;
+      padding: 5px 15px 10px 15px;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &.active {
+        border-bottom: solid 5px $color-green;
+        color: $color-green;
+        font-weight: $font-weight-bold;
+        padding-bottom: 5px;
+      }
+
+      &:hover, &:focus {
+        color: $color-green;
+      }
+    }
+  }
+
+/* TABS
+  >> Container
+________________________________________________________________ */
+
+  &__container {
+    padding: 20px;
+
+    .row {
+      display: flex;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    .col-4 {
+      padding: 0 2%;
+      width: 40%;
+    }
+
+    .col-3 {
+      padding: 0 2%;
+      width: 30%;
+    }
+
+    .col-10 {
+      padding: 0 2%;
+      width: 100%;
+    }
+
+    label {
+      @include font-size(14);
+      color: $color-gray;
+      display: inline-block;
+      margin: 0 0 5px;
+    }
+
+    p {
+      @include font-size(15);
+      color: $color-black;
+      margin: 0;
+    }
+  }
+
+
+}

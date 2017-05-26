@@ -1,0 +1,32 @@
+/**
+* Style GROUP LIST
+* @version: 1.0
+* Copyright(c) -- Jazida
+*/
+
+/* GROUP LIST
+________________________________________________________________ */
+
+.group {
+  &__list {
+    &--item {
+      border: 1px solid #e0e0e0;
+      border-top: 0;
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+
+      &:first-child {
+        border-top: 1px solid #e0e0e0;
+      }
+
+      p {
+        flex-grow: 2;
+      }
+
+      strong {
+        flex-grow: 1;
+      }
+    }
+  }
+}

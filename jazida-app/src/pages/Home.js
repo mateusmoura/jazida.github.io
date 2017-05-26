@@ -72,7 +72,93 @@ export default class Home extends Component {
                 </form>
 
                 <div className="section__block--result">
-                  <h3>Conteúdo do resultado. Fazer animação ao submter o formulário</h3>
+                  <div className="monitor">
+                    <button type="button" className="btn btn-icon btn-close"><i className="fa fa-times" aria-hidden="true"></i></button>
+                    <div className="padded">
+                      <span className="monitor__type"><i className="fa fa-bookmark-o" aria-hidden="true"></i> Monitorar</span>
+
+                      <h6>866190/2015</h6>
+
+                      <div className="monitor__subtitle">
+                        <p>Autorização de Pesquisa</p>
+                      </div>
+                    </div>
+
+                    <div className="tabs">
+                      <nav>
+                        <a href="#this" className="tabs__item active" data-tab="basic-data">Dados básicos</a>
+                        <a href="#this" className="tabs__item" data-tab="events">Eventos</a>
+                      </nav>
+
+                      <div className="tabs__container">
+                        <div className="tabs__container--item" data-tab="basic-data">
+                          <div className="row">
+                            <div className="col-4">
+                              <label>Processo</label>
+                              <p>866190/2015</p>
+                            </div>
+                            <div className="col-3">
+                              <label>Ativo</label>
+                              <p>Sim</p>
+                            </div>
+                            <div className="col-3">
+                              <label>Área</label>
+                              <p>3347,12 ha</p>
+                            </div>
+                          </div>
+                          <div className="row">
+                            <div className="col-10">
+                              <label>Nome</label>
+                              <p>asdfasfdasdfsa</p>
+                            </div>
+                          </div>
+                          <div className="row">
+                            <div className="col-10">
+                              <label>Substância</label>
+                              <p>asdfasf</p>
+                            </div>
+                          </div>
+                          <div className="row">
+                            <div className="col-10">
+                              <label>Fase</label>
+                              <p>asdfasdfas</p>
+                            </div>
+                          </div>
+                          <div className="row">
+                            <div className="col-10">
+                              <label>Último Evento</label>
+                              <p>asdfasdfas</p>
+                            </div>
+                          </div>
+                          <div className="row">
+                            <div className="col-10">
+                              <label>Município</label>
+                              <p>asdfasdf</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="tabs__container--item" data-tab="events">
+                          <div className="group__list">
+                            <div className="group__list--item">
+                              <p>265 - Prorrogação Prazo Alvará Solicitado</p>
+                              <strong>14/08/2012</strong>
+                            </div>
+
+                            <div className="group__list--item">
+                              <p>265 - Prorrogação Prazo Alvará Solicitado</p>
+                              <strong>14/08/2012</strong>
+                            </div>
+
+                            <div className="group__list--item">
+                              <p>265 - Prorrogação Prazo Alvará Solicitado</p>
+                              <strong>14/08/2012</strong>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 

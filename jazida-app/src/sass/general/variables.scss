@@ -42,11 +42,6 @@ $body-bg:                        $color-white;
 $text-color:                     $color-brown;
 $text-color-2:                   $color-white;
 
-// Campaign CAIXA
-$color-blue                     : #5adbe1;
-$color-blue-b                   : #6bd5dc;
-$color-blue-c                   : #3cdbdf;
-
 /* BREAKINGPOINTS
 ________________________________________________________________ */
 
@@ -87,10 +82,10 @@ $btn-line-height:                42px;
 
 $btn-border-radius:              24px;
 
-$btn-default-color:              $color-pink;
+$btn-default-color:              $color-green;
 $btn-default-bg:                 transparent;
-$btn-default-border:             $color-pink;
-$btn-default-hover:              $color-pink;
+$btn-default-border:             transparent;
+$btn-default-hover:              $color-white;
 
 $btn-primary-color:              $color-white;
 $btn-primary-bg:                 $color-pink;
