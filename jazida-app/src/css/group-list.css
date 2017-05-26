@@ -17,3 +17,8 @@ ________________________________________________________________ */
     flex-grow: 2; }
   .group__list--item strong {
     flex-grow: 1; }
+
+.group__scroll {
+  max-height: 326px;
+  overflow: hidden;
+  overflow-y: auto; }

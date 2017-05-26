@@ -5,9 +5,11 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "jquery": "^3.2.1",
+    "pubsub-js": "^1.5.7",
     "react": "^15.5.4",
     "react-animate-on-scroll": "git+https://github.com/mateusmoura/react-animate-on-scroll.git",
     "react-dom": "^15.5.4",
+    "react-input-mask": "^0.8.0",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1"
   },

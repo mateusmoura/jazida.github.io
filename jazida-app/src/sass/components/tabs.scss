@@ -18,6 +18,7 @@ ________________________________________________________________ */
 
     a {
       @include font-size(13);
+      @include transition(all 0.2s cubic-bezier(.42,.5,.65,.72) 0s);
       color: $color-gray-dark;
       display: inline-block;
       padding: 5px 15px 10px 15px;
@@ -43,6 +44,14 @@ ________________________________________________________________ */
 
   &__container {
     padding: 20px;
+
+    &--item {
+      display: none;
+    }
+
+    &--active {
+      display: block;
+    }
 
     .row {
       display: flex;

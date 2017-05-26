@@ -1,23 +1,228 @@
-import React, {Component} from 'react';
-import ScrollAnimation from 'react-animate-on-scroll';
-import $ from 'jquery';
+import React, {Component}       from 'react';
+import ScrollAnimation          from 'react-animate-on-scroll';
+import $                        from 'jquery';
+import PubSubJS                 from 'pubsub-js';
 
-import ImgMap from '../img/fke/maps.png';
-import ImgDashboard from '../img/fke/jazida-dashboard.png';
-import ImgTransparent from '../img/fke/jazida-transparent.png';
-import ImgFaster from '../img/fke/jazida-faster.png';
-import ImgIntegration from '../img/fke/jazida-integration.png';
-import ImgTry from '../img/fke/jazida-try.png';
+import CustomInput              from '../components/CustomInput';
+import NgIf                     from '../components/NgIf';
+import ErrorPublish             from '../components/ErrorPublish'
 
-import SectionBrown from '../img/bkg/section-brown.png';
-import SectionGreen from '../img/bkg/section-green.png';
+import ImgMap                   from '../img/fke/maps.png';
+import ImgDashboard             from '../img/fke/jazida-dashboard.png';
+import ImgTransparent           from '../img/fke/jazida-transparent.png';
+import ImgFaster                from '../img/fke/jazida-faster.png';
+import ImgIntegration           from '../img/fke/jazida-integration.png';
+import ImgTry                   from '../img/fke/jazida-try.png';
 
-import IconDoc from '../img/ico/doc.png';
-import IconBell from '../img/ico/bell.png';
-import IconMarker from '../img/ico/marker.png';
-import IconCloud from '../img/ico/cloud.png';
-import IconGear from '../img/ico/gear.png';
-import IconLock from '../img/ico/lock.png';
+import SectionBrown             from '../img/bkg/section-brown.png';
+import SectionGreen             from '../img/bkg/section-green.png';
+
+import IconDoc                  from '../img/ico/doc.png';
+import IconBell                 from '../img/ico/bell.png';
+import IconMarker               from '../img/ico/marker.png';
+import IconCloud                from '../img/ico/cloud.png';
+import IconGear                 from '../img/ico/gear.png';
+import IconLock                 from '../img/ico/lock.png';
+
+
+class ExplorerJazida extends Component {
+  
+  constructor () {
+    super();
+
+    this.state = {
+      processNumber : '',
+      processData   : [],
+      activeTab     : 'basic-data'
+    }
+
+    // setTimeout(() => {
+    //   $('section .overlay').addClass('overlayAnimate').animate({
+    //     width: '96px',
+    //     left: '50%'
+    //   }, '500');
+
+    //   $('.jAnimateTop').animate({
+    //     top: '-360px'
+    //   }, '500', function () {
+    //     $(this).css('top', 0);
+    //   });
+
+    //   $('.jAnimate').fadeOut('500', function () {
+    //     this.setState({processData: {nome: 'Mateus'}})
+    //   }.bind(this));      
+    // }, 2000);
+
+    this.sendForm   = this.sendForm.bind(this);
+    //this.changeTab  = this.changeTab.bind(this);
+  }
+
+  componentDidMount () {
+    PubSubJS.subscribe('update-processData', (topic, resp) => {
+      this.setState({processData: resp});
+    });
+  }
+
+  sendForm (event) {
+    event.preventDefault();
+
+    fetch('https://api.greenstone.com.br/processos/'+encodeURIComponent(this.state.processNumber.replace('.', '').trim())+'?incluirEventos=true', {method: 'GET', cache: 'default'})
+      .then(resp => resp.json())
+      .then(process => {
+        console.log(process);
+
+        if(process.erro) {
+          new ErrorPublish().ErrorPublish({field: 'process', msg: process.erro});
+        } else {
+          $('section .overlay').addClass('overlayAnimate').animate({
+            width: '96px',
+            left: '50%'
+          }, '500');
+
+          $('.jAnimateTop').animate({
+            top: '-360px'
+          }, '500', function () {
+            $(this).css('top', 0);
+          });
+
+          $('.jAnimate').fadeOut('500', function () {
+            PubSubJS.publish('update-processData', process);
+          });    
+        }
+      });
+  }
+
+  setData (objName, event) {
+    let obj = {};
+
+    obj[objName] = event.target.value;
+
+    this.setState(obj);
+  }
+
+  changeTab (tab) {
+    this.setState({activeTab: tab});
+  }
+
+  render () {
+    return (
+      <div className="section__block--left">
+        <h2 className="jAnimate">Democratizar <br /> o setor mineral</h2>
+
+        <div className="section__block--text jAnimate">
+          <p>Esse é o nosso propósito.</p>
+          <p>Acreditamos em uma gestão mais eficiente da exploração mineral a partir do amploacesso à informação.</p>
+        </div>
+
+        <form className="form jAnimateTop" onSubmit={this.sendForm} method="GET">
+          <h4>Explore o Jazida</h4>
+
+          <CustomInput mask="999.999/9999" maskChar="_" id="process" className="form__style" type="text" name="process" placeholder="Digite o número de um processo" value={this.state.processNumber} onChange={this.setData.bind(this, 'processNumber')} />
+          <button type="submit" className="btn btn-white btn-flat"><i className="fa fa-circle-o-notch fa-spin"></i><span>Consulte</span></button>
+          <span>Exemplo: 864.000/1998</span>
+        </form>
+
+        <NgIf show={this.state.processData}>
+          <div className="section__block--result animated fadeIn">
+            <div className="monitor">
+              <button type="button" className="btn btn-icon btn-close"><i className="fa fa-times" aria-hidden="true"></i></button>
+              <div className="padded">
+                <span className="monitor__type"><i className="fa fa-bookmark-o" aria-hidden="true"></i> Monitorar</span>
+
+                <h6>{this.state.processData.idFormatado}</h6>
+
+                <div className="monitor__subtitle">
+                  <p>Autorização de Pesquisa</p>
+                </div>
+              </div>
+
+              <div className="tabs">
+                <nav>
+                  <a href="#this" className={`tabs__item ${this.state.activeTab === 'basic-data' ? 'active' : ''}`} onClick={this.changeTab.bind(this, 'basic-data')}>Dados básicos</a>
+                  <a href="#this" className={`tabs__item ${this.state.activeTab === 'events' ? 'active' : ''}`} onClick={this.changeTab.bind(this, 'events')}>Eventos</a>
+                </nav>
+
+                <div className="tabs__container">
+                  <div className={`tabs__container--item animated fadeIn ${this.state.activeTab === 'basic-data' ? 'tabs__container--active' : ''}`}>
+                    <div className="row">
+                      <div className="col-4">
+                        <label>Processo</label>
+                        <p>{this.state.processData.idFormatado}</p>
+                      </div>
+                      <div className="col-3">
+                        <label>Ativo</label>
+                        <p>{this.state.processData.ativoFormatado}</p>
+                      </div>
+                      <div className="col-3">
+                        <label>Área</label>
+                        <p>{this.state.processData.areaFormatada}</p>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-10">
+                        <label>Nome</label>
+                        <p>@TODO: Nome</p>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-10">
+                        <label>Substância</label>
+                        <p>{
+                          this.state.processData.substancias ? this.state.processData.substancias.map((sub, index) => {
+                            return this.state.processData.substanciaPrincipalId === sub.substancia.id ? sub.substancia.nomeFormatado : '';
+                          }) : ''  
+                        }</p>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-10">
+                        <label>Fase</label>
+                        <p>{this.state.processData.ultimaFase ? this.state.processData.ultimaFase.nome : ''}</p>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-10">
+                        <label>Último Evento</label>
+                        <p>{this.state.processData.ultimoEvento ? this.state.processData.ultimoEvento.evento.descricaoFormatada : ''}</p>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-10">
+                        <label>Município</label>
+                        <p>{
+                          this.state.processData.municipios ? this.state.processData.municipios.map((municipio, index) => {
+                            return this.state.processData.municipios.length === index + 1 ?  municipio.nomeFormatado  : municipio.nomeFormatado + ', '
+                          }) : ''  
+                        }</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={`tabs__container--item animated fadeIn ${this.state.activeTab === 'events' ? 'tabs__container--active' : ''}`}>
+                    <div className="group__list">
+                      <div className="group__scroll">
+                        {
+                          this.state.processData.eventos ? this.state.processData.eventos.map(evento => {
+                            return (
+                              <div className="group__list--item" key={evento.id}>
+                                <p>{evento.evento.descricaoFormatada}</p>
+                                <strong>{evento.dataDePublicacaoFormatada}</strong>
+                              </div>
+                            )
+                          }) : ''
+                        }
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </NgIf>
+      </div>
+    )
+  };
+}
 
 export default class Home extends Component {
 
@@ -33,14 +238,11 @@ export default class Home extends Component {
     let parent = element.parents('section');
     let section = [];
     
-
     if(element.hasClass('btn-floating-bottom')) {
       section = parent.next('section').length ? parent.next('section') : false;
     } else {
       section = parent.prev('section').length ? parent.prev('section') : false;
     }
-
-    console.log(section);
     
     if(section) {
       $('html, body').animate({scrollTop: section.offset().top- 80}, 600);
@@ -53,114 +255,8 @@ export default class Home extends Component {
         <section className="section">
           <ScrollAnimation animateIn="fadeIn" infinityAnimation={false}>
             <div className="center">
-              <div className="section__block--left">
-                <h2>Democratizar <br /> o setor mineral</h2>
 
-                <div className="section__block--text">
-                  <p>Esse é o nosso propósito.</p>
-                  <p>Acreditamos em uma gestão mais eficiente da exploração mineral a partir do amploacesso à informação.</p>
-                </div>
-
-                <form className="form">
-                  <h4>Explore o Jazida</h4>
-
-                  <div className="form__group">
-                    <input type="text" name="code" className="form__style" value="" placeholder="Digite o número de um processo" />
-                  </div>
-                  <button type="submit" className="btn btn-white btn-flat">Consulte</button>
-                  <span>Exemplo: 864.000/1998</span>
-                </form>
-
-                <div className="section__block--result">
-                  <div className="monitor">
-                    <button type="button" className="btn btn-icon btn-close"><i className="fa fa-times" aria-hidden="true"></i></button>
-                    <div className="padded">
-                      <span className="monitor__type"><i className="fa fa-bookmark-o" aria-hidden="true"></i> Monitorar</span>
-
-                      <h6>866190/2015</h6>
-
-                      <div className="monitor__subtitle">
-                        <p>Autorização de Pesquisa</p>
-                      </div>
-                    </div>
-
-                    <div className="tabs">
-                      <nav>
-                        <a href="#this" className="tabs__item active" data-tab="basic-data">Dados básicos</a>
-                        <a href="#this" className="tabs__item" data-tab="events">Eventos</a>
-                      </nav>
-
-                      <div className="tabs__container">
-                        <div className="tabs__container--item" data-tab="basic-data">
-                          <div className="row">
-                            <div className="col-4">
-                              <label>Processo</label>
-                              <p>866190/2015</p>
-                            </div>
-                            <div className="col-3">
-                              <label>Ativo</label>
-                              <p>Sim</p>
-                            </div>
-                            <div className="col-3">
-                              <label>Área</label>
-                              <p>3347,12 ha</p>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="col-10">
-                              <label>Nome</label>
-                              <p>asdfasfdasdfsa</p>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="col-10">
-                              <label>Substância</label>
-                              <p>asdfasf</p>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="col-10">
-                              <label>Fase</label>
-                              <p>asdfasdfas</p>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="col-10">
-                              <label>Último Evento</label>
-                              <p>asdfasdfas</p>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="col-10">
-                              <label>Município</label>
-                              <p>asdfasdf</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="tabs__container--item" data-tab="events">
-                          <div className="group__list">
-                            <div className="group__list--item">
-                              <p>265 - Prorrogação Prazo Alvará Solicitado</p>
-                              <strong>14/08/2012</strong>
-                            </div>
-
-                            <div className="group__list--item">
-                              <p>265 - Prorrogação Prazo Alvará Solicitado</p>
-                              <strong>14/08/2012</strong>
-                            </div>
-
-                            <div className="group__list--item">
-                              <p>265 - Prorrogação Prazo Alvará Solicitado</p>
-                              <strong>14/08/2012</strong>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <ExplorerJazida />
 
               <div className="section__nav">
                 <ScrollAnimation animateIn="fadeIn" delay={1000} infinityAnimation={false}>
@@ -169,7 +265,7 @@ export default class Home extends Component {
               </div>
             </div>
 
-            <div className="overlay"></div>
+            <div className="overlay"><div className="bg"></div></div>
 
             <figure>
               <img src={ImgMap} alt="Mapa do Brasil" />

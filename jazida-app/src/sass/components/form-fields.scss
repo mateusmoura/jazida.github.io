@@ -205,6 +205,10 @@ ________________________________________________________________ */
 			display: none;
 		}
 	}
+
+	&.error {
+		border-color: $color-red;
+	}
 }
 
 textarea.form__style {

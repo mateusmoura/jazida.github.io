@@ -92,12 +92,25 @@ ________________________________________________________________ */
       top: 0;
       width: 50%;
       z-index: 2;
+
+      &.overlayAnimate {
+        background: url('../img/bkg/map.png') no-repeat right top;
+        @include background-size(cover);
+
+        .bg {
+          background: $color-green;
+          height: 100%;
+          width: 45%;
+        }
+      }
     }
 
     .monitor {
       @include border-radius(5px);
       background-color: $color-white;
+      //display: none;
       position: relative;
+      min-height: 515px;
 
       .btn-close {
         @include font-size(22);
@@ -148,6 +161,7 @@ ________________________________________________________________ */
           @include font-size(14);
           color: $color-gray-dark;
           margin: 0;
+          text-align: right;
         }
       }
     }
@@ -347,7 +361,9 @@ ________________________________________________________________ */
       }
 
       .form {
+        //@include transition(all 0.2s cubic-bezier(.42,.5,.65,.72) 0s);
         padding-top: 10px;
+        position: relative;
 
         h4 {
           @include font-size(20);
@@ -373,6 +389,12 @@ ________________________________________________________________ */
           @include font-size(16);
           clear: both;
           color: $color-white;
+          display: inline-block;
+          margin-bottom: 20px;
+        }
+
+        .error {
+          margin: 0;
         }
       }
     }
@@ -383,6 +405,10 @@ ________________________________________________________________ */
         font-weight: $font-weight-normal;
         margin: 0 0 20px;
       }
+    }
+
+    &--result {
+      min-height: 515px;
     }
   }
 
@@ -442,7 +468,12 @@ ________________________________________________________________ */
   @include clearfix;
 
   &__group {
-   
+    span.error {
+      @include font-size(12);
+      color: $color-red;
+      display: inline-block;
+      font-weight: $font-weight-bold;
+    }
   }
 }
 

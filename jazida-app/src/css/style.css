@@ -2721,12 +2721,23 @@ ________________________________________________________________ */ }
       top: 0;
       width: 50%;
       z-index: 2; }
+      .section:first-child .overlay.overlayAnimate {
+        background: url("../img/bkg/map.png") no-repeat right top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover; }
+        .section:first-child .overlay.overlayAnimate .bg {
+          background: #30b77f;
+          height: 100%;
+          width: 45%; }
     .section:first-child .monitor {
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
       background-color: #ffffff;
-      position: relative; }
+      position: relative;
+      min-height: 515px; }
       .section:first-child .monitor .btn-close {
         font-size: 22px;
         font-size: 2.2rem;
@@ -2764,7 +2775,8 @@ ________________________________________________________________ */ }
         font-size: 14px;
         font-size: 1.4rem;
         color: #666666;
-        margin: 0; }
+        margin: 0;
+        text-align: right; }
   .section:nth-child(2) .center {
     padding-top: 60px; }
   .section:nth-child(2) h2 {
@@ -2869,7 +2881,8 @@ ________________________________________________________________ */ }
     margin: 0 0 40px;
     text-transform: uppercase; }
   .section__block--left .form {
-    padding-top: 10px; }
+    padding-top: 10px;
+    position: relative; }
     .section__block--left .form h4 {
       font-size: 20px;
       font-size: 2rem;
@@ -2890,12 +2903,18 @@ ________________________________________________________________ */ }
       font-size: 16px;
       font-size: 1.6rem;
       clear: both;
-      color: #ffffff; }
+      color: #ffffff;
+      display: inline-block;
+      margin-bottom: 20px; }
+    .section__block--left .form .error {
+      margin: 0; }
   .section__block--text p {
     font-size: 16px;
     font-size: 1.6rem;
     font-weight: 400;
     margin: 0 0 20px; }
+  .section__block--result {
+    min-height: 515px; }
   .section__data {
     display: flex;
     margin-bottom: 90px;
@@ -2931,6 +2950,13 @@ ________________________________________________________________ */
 
 .form:after {
   clear: both; }
+
+.form__group span.error {
+  font-size: 12px;
+  font-size: 1.2rem;
+  color: #eb3e40;
+  display: inline-block;
+  font-weight: 700; }
 
 /* MAIN
     >> List
@@ -3060,6 +3086,14 @@ ________________________________________________________________ */
     width: 100%; }
   .btn .icon {
     line-height: 1; }
+  .btn .fa-circle-o-notch {
+    display: none; }
+  .btn span {
+    margin: 0; }
+  .btn.loading span {
+    display: none; }
+  .btn.loading i {
+    display: block; }
 
 /* ALTERNATIVE BUTTONS
 ________________________________________________________________ */
@@ -3674,6 +3708,8 @@ ________________________________________________________________ */
       top: 50%; }
     .form__style.custom-select ~ .validate, .form__style .custom-select ~ .validate {
       display: none; }
+  .form__style.error {
+    border-color: #eb3e40; }
 
 textarea.form__style {
   min-height: 170px; }
@@ -3878,6 +3914,10 @@ ________________________________________________________________ */ }
     .tabs nav a {
       font-size: 13px;
       font-size: 1.3rem;
+      transition: all 0.2s cubic-bezier(0.42, 0.5, 0.65, 0.72) 0s;
+      -moz-transition: all 0.2s cubic-bezier(0.42, 0.5, 0.65, 0.72) 0s;
+      -webkit-transition: all 0.2s cubic-bezier(0.42, 0.5, 0.65, 0.72) 0s;
+      -o-transition: all 0.2s cubic-bezier(0.42, 0.5, 0.65, 0.72) 0s;
       color: #666666;
       display: inline-block;
       padding: 5px 15px 10px 15px;
@@ -3892,6 +3932,10 @@ ________________________________________________________________ */ }
         color: #30b77f; }
   .tabs__container {
     padding: 20px; }
+    .tabs__container--item {
+      display: none; }
+    .tabs__container--active {
+      display: block; }
     .tabs__container .row {
       display: flex;
       margin-bottom: 15px;
@@ -3936,3 +3980,8 @@ ________________________________________________________________ */
     flex-grow: 2; }
   .group__list--item strong {
     flex-grow: 1; }
+
+.group__scroll {
+  max-height: 326px;
+  overflow: hidden;
+  overflow-y: auto; }
