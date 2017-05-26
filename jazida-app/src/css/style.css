@@ -3090,10 +3090,21 @@ ________________________________________________________________ */
     display: none; }
   .btn span {
     margin: 0; }
-  .btn.loading span {
-    display: none; }
-  .btn.loading i {
-    display: block; }
+  .btn.loading {
+    font: "0/0 a";
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0; }
+    .btn.loading .fa-circle-o-notch {
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      color: #ffffff;
+      display: inline-block;
+      left: 40%;
+      position: relative; }
 
 /* ALTERNATIVE BUTTONS
 ________________________________________________________________ */

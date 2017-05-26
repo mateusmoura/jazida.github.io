@@ -59,12 +59,18 @@ ________________________________________________________________ */
 	}
 
 	&.loading {
-		span {
-			display: none;
-		}
+		@include text-hide;
 
-		i {
-			display: block;
+		// .icon {
+		// 	display: none;
+		// }
+
+		.fa-circle-o-notch {
+			@include transform(translateX(-50%));
+			color: $color-white;
+			display: inline-block;
+			left: 40%;
+			position: relative;
 		}
 	}
 }

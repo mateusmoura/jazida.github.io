@@ -33,8 +33,14 @@ class ExplorerJazida extends Component {
     this.state = {
       processNumber : '',
       processData   : [],
-      activeTab     : 'basic-data'
+      activeTab     : 'basic-data',
+      loading       : false
     }
+
+    // setTimeout(()=>{
+    //   console.log('set');
+    //   this.setState({loading: true})
+    // }, 2000);
 
     // setTimeout(() => {
     //   $('section .overlay').addClass('overlayAnimate').animate({
@@ -66,11 +72,11 @@ class ExplorerJazida extends Component {
   sendForm (event) {
     event.preventDefault();
 
+    this.setState({loading: true});
+
     fetch('https://api.greenstone.com.br/processos/'+encodeURIComponent(this.state.processNumber.replace('.', '').trim())+'?incluirEventos=true', {method: 'GET', cache: 'default'})
       .then(resp => resp.json())
       .then(process => {
-        console.log(process);
-
         if(process.erro) {
           new ErrorPublish().ErrorPublish({field: 'process', msg: process.erro});
         } else {
@@ -89,6 +95,8 @@ class ExplorerJazida extends Component {
             PubSubJS.publish('update-processData', process);
           });    
         }
+
+        this.setState({loading: false});
       });
   }
 
@@ -118,7 +126,7 @@ class ExplorerJazida extends Component {
           <h4>Explore o Jazida</h4>
 
           <CustomInput mask="999.999/9999" maskChar="_" id="process" className="form__style" type="text" name="process" placeholder="Digite o número de um processo" value={this.state.processNumber} onChange={this.setData.bind(this, 'processNumber')} />
-          <button type="submit" className="btn btn-white btn-flat"><i className="fa fa-circle-o-notch fa-spin"></i><span>Consulte</span></button>
+          <button type="submit" className={`btn btn-white btn-flat ${this.state.loading && 'loading'}`}><i className="fa fa-circle-o-notch fa-spin fa-1x fa-fw"></i>Consulte</button>
           <span>Exemplo: 864.000/1998</span>
         </form>
 

@@ -26,8 +26,6 @@ export default class CustomInput extends Component {
   render() {
     let html = '';
 
-    console.log('render');
-
     if(this.props.mask) {
       html = (
         <div className="form__group">
