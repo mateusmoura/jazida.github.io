@@ -1,0 +1,105 @@
+/**
+* Style BUTTONS
+* @version: 1.0
+* Copyright(c) -- Jazida
+*/
+
+/* BUTTONS MIXINS
+  >> For colors and sizes.
+________________________________________________________________ */
+
+@mixin buttons-variation( $color, $background, $border, $color-hover: none, $background-hover: none ){
+  // Animation
+  @include transition(all 0.2s cubic-bezier(.42,.5,.65,.72) 0s);
+  background-color: $background;
+
+  @if $border != none {
+    border: solid 1px;
+    border-color: $border;
+  }
+
+  color: $color;
+
+  &:hover, &:focus, &.focus, &:active, &.active {
+    //background-color: darken($background, 10%);
+    @if $background-hover != none {
+      background-color: $background-hover;
+    }
+
+    @if $color-hover != none {
+      color: $color-hover;
+    }
+
+    @if $border != none {
+      //border-color: darken($border, 12%);
+      border-color: $border;
+    }
+  }
+
+  &:active, &.active{
+    background-image: none;
+  }
+  &.disabled, &[disabled]{
+    &, &:hover, &:focus, &.focus, &:active, &.active{
+      background-color: $background;
+      border-color: $border;
+    }
+  }
+
+  &.bg-full {
+    background-color: $color;
+    color: $color-white;
+  }
+
+  &.no-hover {
+    &:hover, &:focus, &.focus, &:active, &.active {
+      background-color: transparent;
+      color: $color;
+    }
+  }
+}
+
+/* BUTTONS MIXINS
+  >> For buttons sizes
+________________________________________________________________ */
+
+@mixin buttons-size( $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius ) {
+  //@include border-radius( $border-radius );
+  @include font-size($font-size);
+  line-height: $line-height;
+  padding: $padding-vertical $padding-horizontal;
+
+  @include desktop {
+    //@include border-radius( $border-radius + 28 );
+  }
+}
+
+/* BUTTON LOADING
+________________________________________________________________ */
+
+@mixin button-loading ($color) {
+  &.loading, &.loading:hover {
+    @include text-hide;
+    border: solid 1px $color;
+
+    .css-loading {
+      > span {
+        box-shadow: 0 1.2px 0 0 $color;
+      }
+    }
+
+    .icon-loading {
+      color: $color;
+      display: block;
+    }
+
+    svg {
+      color: $color;
+      fill: $color;
+
+      path { 
+        fill: $color;
+      }
+    }
+  }
+}

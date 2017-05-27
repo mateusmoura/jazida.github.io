@@ -1,0 +1,192 @@
+/**
+* Style 
+* $version: 1.0
+* Copyright(c) -- Jazida
+*/
+
+/* COLOURS
+________________________________________________________________ */
+
+// Project pallete
+$color-green:                    #30b77f;
+$color-green-light:              #44d392;
+$color-green-dark:               #049b5c;
+$color-avocado:                  #bec532;
+$color-yellow:                   #f7ae2c;
+$color-orange:                   #f28c2b;
+$color-coral:                    #ee652b;
+$color-red:                      #eb3e40;
+$color-pink:                     #ea4164;
+$color-purple:                   #812e77;
+$color-eggplant:                 #4d3855;
+
+// Neutral pallete
+$color-white:                    #ffffff;
+$color-gray:                     #cccccc;
+$color-gray-light:               #f5f5f5;
+$color-gray-dark:                #666666;
+$color-gray-darker:              #333333;
+$color-black:                    #000000;
+$color-brown:                    #51453f;
+
+// Message color
+$color-success:                  $color-black;
+$color-info:                     $color-black;
+$color-alert:                    $color-black;
+$color-error:                    $color-black;
+
+// Background color
+$body-bg:                        $color-white;
+
+// Text color
+$text-color:                     $color-brown;
+$text-color-2:                   $color-white;
+
+/* BREAKINGPOINTS
+________________________________________________________________ */
+
+$breakpoints:                    4;
+// Tablets
+$content-tablet:                 740px;//(740px + susy-get(gutters));
+//$content-tablet-max:           (1024px + susy-get(gutters));
+// Desktops
+$content-desktop:                960px;//(970px + susy-get(gutters));
+// Large Desktops
+$content-large-desktop:          1080px;//(1170px + susy-get(gutters));
+// Portrait
+$portrait:                       'orientation: portrait';
+// Landscape
+$landscape:                      'orientation: landscape';
+
+/* TYPOGRAPHY
+________________________________________________________________ */
+
+//$font-family-icons:              '';
+$font-family:                   'Titillium Web', sans-serif;
+$font-weight-thin:               200;
+$font-weight-light:              300;
+$font-weight-normal:             400;
+$font-weight-bold:               700;
+$font-weight-dark:               900;
+
+/* BUTTONS
+________________________________________________________________ */
+
+$btn-font-weight:                normal;
+$btn-font-size:                  15;
+
+$btn-padding-vertical:           12.5px;
+$btn-padding-horizontal:         20px;
+
+$btn-line-height:                42px;
+
+$btn-border-radius:              24px;
+
+$btn-default-color:              $color-green;
+$btn-default-bg:                 transparent;
+$btn-default-border:             transparent;
+$btn-default-hover:              $color-white;
+
+$btn-primary-color:              $color-white;
+$btn-primary-bg:                 $color-pink;
+$btn-primary-border:             none;
+$btn-primary-hover:              $color-pink;
+
+$btn-green-color:                $color-white;
+$btn-green-bg:                   $color-green;
+$btn-green-border:               $color-green;
+$btn-green-hover:                $color-green;
+$btn-green-bg-hover:             $color-white;
+
+$btn-brown-color:                $color-green;
+$btn-brown-bg:                   $color-brown;
+$btn-brown-border:               $color-brown;
+$btn-brown-hover:                $color-brown;
+$btn-brown-bg-hover:             $color-white;
+
+$btn-pink-color:                 $color-pink;
+$btn-pink-bg:                    transparent;
+$btn-pink-border:                $color-pink;
+$btn-pink-hover:                 $color-pink;
+
+$btn-white-color:                $color-white;
+$btn-white-bg:                   transparent;
+$btn-white-border:               $color-white;
+$btn-white-hover:                $color-white;
+
+$btn-link-disabled-color:        $color-gray-light;
+// Enable shadow
+$shadow-button:                  false;
+// Hover Disabled
+$cursor-disabled:                not-allowed;
+// Buttons Flat
+$btn-flat                       : false;
+
+/* FORM-FIELDS
+________________________________________________________________ */
+
+/*
+* CONFIG
+*/
+// Enable/Disabled input radius
+$border-radius-input:            true;
+// Enable/Disabled input animation
+$animate-focus-input:            true;
+// Enable/Disabled input shadow
+$shadow-input:                   true;
+
+/*
+* COLORS
+*/
+$field-success:                  $color-green;
+$field-error:                    $color-red;
+
+/*
+* LABELS
+*/
+
+$label-color:                    $color-gray-darker;
+$label-font-size:                14;
+$label-font-height:              14px;
+
+/* 
+* INPUTS
+*/
+$input-bg:                       $color-white;
+$input-bg-optional:              #fafafa;
+$input-bg-disabled:              #fafafa;
+$font-size-input:                14;
+$input-color:                    $text-color;
+$input-border:                   $color-white;
+$input-border-radius:            0px;
+$input-border-focus:             $color-white;
+$input-color-placeholder:        $text-color;
+$input-height-base:              32px;
+$padding-input-vertical:         0;
+$padding-input-horizontal:       15px;
+
+/*
+* SELECT
+*/
+$select-bg:                      $color-white;
+$select-bg-optional:             #fafafa;
+$select-bg-disabled:             #fafafa;
+$select-border:                  $color-white;
+$select-border-focus:            $color-gray-darker;
+
+/*
+* RADIUS
+*/
+
+
+
+/*
+* CHECKBOX
+*/
+
+
+
+
+
+
+

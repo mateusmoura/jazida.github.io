@@ -1,0 +1,630 @@
+@charset "UTF-8";
+/**
+* Arquivo responsavel pelo estilo do site  
+*
+* @version: 1.0
+*
+* Copyright(c) Todos os direitos reservados a Jazida
+*/
+/* IMPORTANDO BIBLIOTECAS
+________________________________________________________________ */
+/* General
+________________________________________________________________ */
+/**
+* Style 
+* $version: 1.0
+* Copyright(c) -- Jazida
+*/
+/* COLOURS
+________________________________________________________________ */
+/* BREAKINGPOINTS
+________________________________________________________________ */
+/* TYPOGRAPHY
+________________________________________________________________ */
+/* BUTTONS
+________________________________________________________________ */
+/* FORM-FIELDS
+________________________________________________________________ */
+/*
+* CONFIG
+*/
+/*
+* COLORS
+*/
+/*
+* LABELS
+*/
+/* 
+* INPUTS
+*/
+/*
+* SELECT
+*/
+/*
+* RADIUS
+*/
+/*
+* CHECKBOX
+*/
+/**
+* MIXINS
+* @version: 1.0
+* Copyright(c) -- Jazida
+*/
+/* EXTERNAL MIXINS
+________________________________________________________________ */
+/**
+* Style BUTTONS
+* @version: 1.0
+* Copyright(c) -- Jazida
+*/
+/* BUTTONS MIXINS
+  >> For colors and sizes.
+________________________________________________________________ */
+/* BUTTONS MIXINS
+  >> For buttons sizes
+________________________________________________________________ */
+/* BUTTON LOADING
+________________________________________________________________ */
+/**
+* Style FORM
+* @version: 1.0
+* Copyright(c) -- Jazida
+*/
+/* FORM MIXINS
+________________________________________________________________ */
+/* BREAKPOINT
+________________________________________________________________ */
+/* CLEARFIX
+	>> http://nicolasgallagher.com/micro-clearfix-hack/
+________________________________________________________________ */
+/* CSS replacement
+	>> https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+________________________________________________________________ */
+/* FONT-RELATED
+________________________________________________________________ */
+/* TRANSITION
+________________________________________________________________ */
+/* TRANSFORM
+________________________________________________________________ */
+/* BACKGROUND-SIZE
+________________________________________________________________ */
+/* BORDER-RADIUS
+________________________________________________________________ */
+/* MIXIN ANIMATION
+________________________________________________________________ */
+/* MIXIN BOX SHADOW
+________________________________________________________________ */
+/* MIXIN OPACITY
+________________________________________________________________ */
+/* MIXIN KEYFRAMES
+________________________________________________________________ */
+/* Animation next button in Home */
+@-webkit-keyframes loop-arrow {
+  to {
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    transform: translateY(5px); } }
+
+@-moz-keyframes loop-arrow {
+  to {
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    transform: translateY(5px); } }
+
+@-ms-keyframes loop-arrow {
+  to {
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    transform: translateY(5px); } }
+
+@keyframes loop-arrow {
+  to {
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    transform: translateY(5px); } }
+
+/* Animation loading bar */
+@-webkit-keyframes loading-bar-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-moz-keyframes loading-bar-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-ms-keyframes loading-bar-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes loading-bar-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+/**
+* Style STRUCTURE
+* @version: 1.0
+* Copyright(c) -- Jazida
+*/
+/* IMPORT FONTS
+________________________________________________________________ */
+/* ELEMENTS
+________________________________________________________________ */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:focus {
+  outline: none; }
+
+html {
+  height: 100%;
+  font-size: 10px;
+  line-height: 1.24; }
+
+body {
+  background-color: #ffffff;
+  color: #51453f;
+  font-family: "Titillium Web", sans-serif;
+  height: 100%; }
+  body.loading {
+    overflow: hidden; }
+
+/* SELEÇÃO
+	>> Cor de seleção do texto
+________________________________________________________________ */
+*::-moz-selection {
+  background: none repeat scroll 0 0 #ea4164;
+  color: #ffffff;
+  text-shadow: none; }
+
+*::selection {
+  background: none repeat scroll 0 0 #ea4164;
+  color: #ffffff;
+  text-shadow: none; }
+
+*::-webkit-selection {
+  background: none repeat scroll 0 0 #ea4164;
+  color: #ffffff;
+  text-shadow: none; }
+
+/* ELEMENT SPECIALIZATION 
+________________________________________________________________ */
+.no-style {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+/* CLASSES
+________________________________________________________________ */
+#general:before, #general:after {
+  content: " ";
+  display: table; }
+
+#general:after {
+  clear: both; }
+
+.center {
+  width: 100%; }
+  .center:before, .center:after {
+    content: " ";
+    display: table; }
+  .center:after {
+    clear: both; }
+  @media (min-width: 960px) {
+    .center {
+      margin: 0 auto;
+      max-width: 1080px;
+      position: relative; } }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+/**
+* Style HEADER
+* @version: 1.0
+* Copyright(c) -- Jazida
+*/
+/* HEADER
+________________________________________________________________ */
+header {
+  background-color: #ffffff;
+  box-shadow: 0 3px 9px rgba(1, 0, 1, 0.05);
+  min-height: 80px;
+  max-height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  /* HEADER
+    >> Logo
+________________________________________________________________ */
+  /* HEADER
+    >> Menu
+________________________________________________________________ */ }
+  header:before, header:after {
+    content: " ";
+    display: table; }
+  header:after {
+    clear: both; }
+  header .center {
+    align-items: center;
+    display: flex;
+    height: 80px;
+    justify-content: center; }
+  header h1 {
+    flex-grow: 1;
+    width: 20%; }
+  header nav {
+    flex-grow: 2;
+    text-align: right;
+    width: 75%; }
+    header nav a {
+      text-transform: uppercase;
+      margin: 0 20px; }
+      header nav a:first-child {
+        margin-left: 0; }
+      header nav a:last-child {
+        margin-right: 0; }
+
+/**
+* Style HEADER
+* @version: 1.0
+* Copyright(c) -- Jazida
+*/
+/* MAIN
+________________________________________________________________ */
+main {
+  padding-top: 80px; }
+
+/* MAIN
+    >> Sections
+________________________________________________________________ */
+.section {
+  height: 95vh;
+  position: relative;
+  min-height: 750px;
+  max-height: 802px;
+  overflow: hidden;
+  /* MAIN
+    >> Sections
+      >> First
+________________________________________________________________ */
+  /* MAIN
+    >> Sections
+      >> Second
+________________________________________________________________ */
+  /* MAIN
+    >> Sections
+      >> Third, Fourth, Fitth
+________________________________________________________________ */
+  /* MAIN
+    >> Sections
+      >> Fourth
+________________________________________________________________ */
+  /* MAIN
+    >> Sections
+      >> Sixth
+________________________________________________________________ */
+  /* MAIN
+    >> Sections
+      >> Block
+________________________________________________________________ */
+  /* MAIN
+    >> Sections
+      >> Data
+________________________________________________________________ */
+  /* MAIN
+    >> Section
+      >> Nav
+________________________________________________________________ */ }
+  .section .center {
+    height: 100%; }
+  .section__bg {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 6; }
+    @media (min-width: 1380px) {
+      .section__bg img {
+        width: 100%; } }
+  .section__index {
+    position: relative;
+    z-index: 7; }
+  .section:first-child {
+    background-image: linear-gradient(to right, #30b77f 5%, #3dbf8e 100%); }
+    .section:first-child .section__block--left {
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      position: relative;
+      top: 50%;
+      width: 38%;
+      z-index: 3; }
+    .section:first-child figure {
+      height: 100%;
+      min-height: 750px;
+      max-height: 802px;
+      max-width: 50%;
+      min-width: 50%;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1; }
+      .section:first-child figure img {
+        height: 100%; }
+    .section:first-child .overlay {
+      opacity: 0.9;
+      filter: "alpha(opacity=90)";
+      background-image: linear-gradient(to right, #30b77f 5%, #35de98 100%);
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      z-index: 2; }
+  .section:nth-child(2) .center {
+    padding-top: 60px; }
+  .section:nth-child(2) h2 {
+    font-size: 50px;
+    font-size: 5rem;
+    color: #ffffff;
+    display: block;
+    font-weight: 300;
+    margin: 0 0 20px 0px;
+    text-align: center; }
+  .section:nth-child(2) .section__image {
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 0;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 4; }
+  .section:nth-child(3) .center, .section:nth-child(4) .center, .section:nth-child(5) .center {
+    padding-top: 60px; }
+  .section:nth-child(3) .section__index, .section:nth-child(4) .section__index, .section:nth-child(5) .section__index {
+    display: flex; }
+  .section:nth-child(3) h2, .section:nth-child(4) h2, .section:nth-child(5) h2 {
+    font-size: 50px;
+    font-size: 5rem;
+    color: #ffffff;
+    font-weight: 300;
+    margin: 0 0 20px 0px; }
+  .section:nth-child(3) .section__block--left, .section:nth-child(4) .section__block--left, .section:nth-child(5) .section__block--left {
+    padding: 0 50px 0 40px;
+    flex-grow: 1;
+    width: 50%; }
+  .section:nth-child(3) .section__block--right, .section:nth-child(4) .section__block--right, .section:nth-child(5) .section__block--right {
+    padding: 0 100px 0 50px;
+    flex-grow: 1;
+    width: 50%; }
+  .section:nth-child(3) .section__image, .section:nth-child(4) .section__image, .section:nth-child(5) .section__image {
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    align-items: flex-end;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 4; }
+  .section:nth-child(4) h2 {
+    color: #30b77f; }
+  .section:nth-child(4) .section__block--text p {
+    color: #ffffff; }
+  .section:nth-child(4) .list__item h5 {
+    color: #30b77f; }
+  .section:nth-child(4) .list__item p {
+    color: #ffffff; }
+  .section:nth-child(6) {
+    background-color: #30b77f; }
+    .section:nth-child(6) h3 {
+      font-size: 50px;
+      font-size: 5rem;
+      color: #ffffff;
+      font-weight: 200;
+      margin: 0 0 40px 0px;
+      text-transform: uppercase; }
+    .section:nth-child(6) .section__index {
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      padding: 0 0 0 40px;
+      position: relative;
+      top: 50%;
+      width: 50%;
+      z-index: 3; }
+    .section:nth-child(6) .form__group {
+      margin-bottom: 12px; }
+    .section:nth-child(6) .form button {
+      margin-top: 10px; }
+    .section:nth-child(6) .section__image {
+      margin: 0;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      width: 100%;
+      z-index: 2; }
+      .section:nth-child(6) .section__image img {
+        height: 100%;
+        width: 100%; }
+  .section__block--left h2 {
+    font-size: 48px;
+    font-size: 4.8rem;
+    color: #ffffff;
+    font-weight: 300;
+    margin: 0 0 40px;
+    text-transform: uppercase; }
+  .section__block--left .form {
+    padding-top: 10px; }
+    .section__block--left .form h4 {
+      font-size: 20px;
+      font-size: 2rem;
+      color: #ffffff;
+      font-weight: 400;
+      margin: 0 0 15px;
+      text-transform: uppercase; }
+    .section__block--left .form__group {
+      float: left;
+      margin: 0 0 15px;
+      width: 70%; }
+    .section__block--left .form button {
+      font-size: 13px;
+      font-size: 1.3rem;
+      margin: 0 0 15px 10px;
+      padding: 8.5px 10px; }
+    .section__block--left .form span {
+      font-size: 16px;
+      font-size: 1.6rem;
+      clear: both;
+      color: #ffffff; }
+  .section__block--text p {
+    font-size: 16px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 0 0 20px; }
+  .section__data {
+    display: flex;
+    margin-bottom: 90px;
+    width: 100%; }
+    .section__data div {
+      flex-grow: 1;
+      text-align: center; }
+    .section__data p {
+      font-size: 18px;
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin: 0;
+      text-transform: uppercase; }
+      .section__data p strong {
+        font-size: 25px;
+        font-size: 2.5rem;
+        color: #30b77f;
+        display: block; }
+  .section__nav {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    z-index: 4; }
+    .section__nav button:first-child {
+      margin-right: 10px; }
+
+/* MAIN
+    >> Form
+________________________________________________________________ */
+.form:before, .form:after {
+  content: " ";
+  display: table; }
+
+.form:after {
+  clear: both; }
+
+/* MAIN
+    >> List
+________________________________________________________________ */
+.list__item {
+  margin-bottom: 20px; }
+  .list__item:before, .list__item:after {
+    content: " ";
+    display: table; }
+  .list__item:after {
+    clear: both; }
+  .list__item--left {
+    float: left;
+    text-align: center;
+    width: 20%; }
+  .list__item--right {
+    float: right;
+    padding-left: 5px;
+    width: 78%; }
+  .list__item h5 {
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    text-transform: uppercase; }
+  .list__item p {
+    font-size: 16px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 0 0 20px; }
+
+/**
+* Style FOOTER
+* @version: 1.0
+* Copyright(c) -- Footer
+*/
+/* Footer
+________________________________________________________________ */
+footer {
+  background: url("../img/bkg/footer.png") no-repeat center top;
+  position: relative;
+  min-height: 180px;
+  margin-top: -70px;
+  z-index: 10; }
+  @media (min-width: 1390px) {
+    footer {
+      -webkit-background-size: 100%;
+      -moz-background-size: 100%;
+      -o-background-size: 100%;
+      background-size: 100%; } }
+  footer .center {
+    align-items: center;
+    display: flex;
+    min-height: 180px;
+    padding-top: 45px; }
+  footer p {
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #ffffff; }
+    footer p a.btn-link {
+      display: block;
+      text-align: left; }
+  footer h3 {
+    display: block;
+    position: relative;
+    left: 22%; }
+
+/* Components
+________________________________________________________________ */

@@ -4,59 +4,68 @@
       <title>Jazida</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="css/normalize.css" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700" rel="stylesheet">
       <link href="css/style.css" rel="stylesheet">
   </head>
-  <body>
-    <header>
-      <div class="center">
-        <h1><a href="#this"><img src="img/logo.png" alt="Jazida"></a></h1>
-        <nav>
-          <a href="#this" class="btn btn-link">Início</a>
-          <a href="#this" class="btn btn-link">Planos</a>
-          <a href="#this" class="btn btn-link">Tutoriais</a>
-          <a href="#this" class="btn btn-link">Login</a>
-          <a href="#this" class="btn btn-green">Cadastre-se</a>
-        </nav>
-      </div>
-    </header>
+<body>
+	<header>
+		<div class="center">
+		<h1><a href="#this"><img src="img/lgo/logo.png" alt="Jazida"></a></h1>
+		<nav>
+			<a href="#this" class="btn btn-link">Início</a>
+			<a href="#this" class="btn btn-link">Planos</a>
+			<a href="#this" class="btn btn-link">Tutoriais</a>
+			<a href="#this" class="btn btn-link">Login</a>
+			<a href="#this" class="btn btn-green">Cadastre-se</a>
+		</nav>
+		</div>
+	</header>
 
-    <main role="main">
-      <section class="section">
-        <div class="center">
-					<div class="section__block--right">
-						<h2>Democratizar o setor mineral</h2>
+	<main role="main">
+		<section class="section">
+			<div class="center">
+				<div class="section__block--left">
+					<h2>Democratizar <br /> o setor mineral</h2>
 
-						<div class="section__block--text">
-							<p>Esse é o nosso propósito.</p>
-							<p>Acreditamos em uma gestão mais eficiente da exploração mineral a partir do amploacesso à informação.</p>
-						</div>
-
-						<form>
-							<h4>Explore o Jazida</h4>
-
-							<input type="text" name="code" value="" />
-							<button type="submit" class="btn btn-white btn-flat">Consulte</button>
-							<span>Exemplo: 864.000/1998</span>
-						</form>
-
-						<div class="section__block--result">
-							<h3>Conteúdo do resultado. Fazer animação ao submter o formulário</h3>
-						</div>
+					<div class="section__block--text">
+						<p>Esse é o nosso propósito.</p>
+						<p>Acreditamos em uma gestão mais eficiente da exploração mineral a partir do amploacesso à informação.</p>
 					</div>
 
-					<div class="section__nav">
-						<button type="button" class="btn btn-floating btn-brown"><i class="icon icon-arrow-bottom"></i></button>
+					<form class="form">
+						<h4>Explore o Jazida</h4>
+
+						<div class="form__group">
+							<input type="text" name="code" class="form__style" value="" placeholder="Digite o número de um processo" />
+						</div>
+						<button type="submit" class="btn btn-white btn-flat">Consulte</button>
+						<span>Exemplo: 864.000/1998</span>
+					</form>
+
+					<div class="section__block--result">
+						<h3>Conteúdo do resultado. Fazer animação ao submter o formulário</h3>
 					</div>
-        </div>
+				</div>
 
-				<figure>
-					<img src="img/fke/maps.png" alt="Mapa do Brasil">
-				</figure>
-      </section>
+				<div class="section__nav">
+					<button type="button" class="btn btn-floating btn-floating-bottom btn-brown"><span>&dlcorn;</span></button>
+				</div>
+			</div>
 
-			<section class="section">
-				<div class="center">
+			<div class="overlay"></div>
+
+			<figure>
+				<img src="img/fke/maps.png" alt="Mapa do Brasil">
+			</figure>
+		</section>
+
+		<section class="section">
+			<div class="section__bg">
+				<img src="img/bkg/section-brown.png" alt="" />
+			</div>
+
+			<div class="center">
+				<div class="section__index">
 					<h2>JAZIDA EM NÚMEROS</h2>
 
 					<div class="section__data">
@@ -74,29 +83,37 @@
 					</div>
 
 					<div class="section__nav">
-						<button type="button" class="btn btn-floating btn-brown"><i class="icon icon-arrow-top"></i></button>
-						<button type="button" class="btn btn-floating btn-brown"><i class="icon icon-arrow-bottom"></i></button>
+						<button type="button" class="btn btn-floating btn-floating-top btn-green"><span>&dlcorn;</span></button>
+						<button type="button" class="btn btn-floating btn-floating-bottom btn-green"><span>&dlcorn;</span></button>
 					</div>
 				</div>
-				
-				<figure class="section__image">
-					<img src="img/fke/jazida-dashboard.png" alt="Jazida Dashboard" />
-				</figure>
-			</section>
+			</div>
 
-			<section class="section">
-				<div class="center">
+			<figure class="section__image">
+				<img src="img/fke/jazida-dashboard.png" alt="Jazida Dashboard" />
+			</figure>
+		</section>
+
+		<section class="section">
+			<div class="section__bg">
+				<img src="img/bkg/section-green.png" alt="" />
+			</div>
+
+			<div class="center">
+				<div class="section__index">
 					<div class="section__block--left">
 						<h2>TRANSPARÊNCIA</h2>
 
-						<p>Eliminamos barreiras burocráticas e tornamos informações públicas acessíveis aos players do setor.</p>
+						<div class="section__block--text">
+							<p>Eliminamos barreiras burocráticas e tornamos informações públicas acessíveis aos players do setor.</p>
+						</div>
 					</div>
 
 					<div class="section__block--right">
 						<div class="list">
 							<div class="list__item">
 								<div class="list__item--left">
-									<img src="img/fke/doc.png" alt="Leitura Automática do D.O.U" />
+									<img src="img/ico/doc.png" alt="Leitura Automática do D.O.U" />
 								</div>
 
 								<div class="list__item--right">
@@ -107,7 +124,7 @@
 
 							<div class="list__item">
 								<div class="list__item--left">
-									<img src="img/fke/bell.png" alt="Alertas sobre prazos" />
+									<img src="img/ico/bell.png" alt="Alertas sobre prazos" />
 								</div>
 
 								<div class="list__item--right">
@@ -119,29 +136,37 @@
 					</div>
 
 					<div class="section__nav">
-						<button type="button" class="btn btn-floating btn-brown"><i class="icon icon-arrow-top"></i></button>
-						<button type="button" class="btn btn-floating btn-brown"><i class="icon icon-arrow-bottom"></i></button>
+						<button type="button" class="btn btn-floating btn-floating-top btn-brown"><span>&dlcorn;</span></button>
+						<button type="button" class="btn btn-floating btn-floating-bottom btn-brown"><span>&dlcorn;</span></button>
 					</div>
 				</div>
+			</div>
 
-				<figure class="section__image">
-					<img src="img/fke/jazida-transparent.png" alt="Jazida Transparência" />
-				</figure>
-			</section>
+			<figure class="section__image">
+				<img src="img/fke/jazida-transparent.png" alt="Jazida Transparência" />
+			</figure>
+		</section>
 
-			<section class="section">
-				<div class="center">
+		<section class="section">
+			<div class="section__bg">
+				<img src="img/bkg/section-brown.png" alt="" />
+			</div>
+
+			<div class="center">
+				<div class="section__index">
 					<div class="section__block--left">
 						<h2>RAPIDEZ</h2>
 
-						<p>Economizamos tempo e trabalho a partir de uma interface automática e intuitiva acessível via internet.</p>
+						<div class="section__block--text">
+							<p>Economizamos tempo e trabalho a partir de uma interface automática e intuitiva acessível via internet.</p>
+						</div>
 					</div>
 
 					<div class="section__block--right">
 						<div class="list">
 							<div class="list__item">
 								<div class="list__item--left">
-									<img src="img/fke/marker.png" alt="Georreferenciamento Facilitado" />
+									<img src="img/ico/marker.png" alt="Georreferenciamento Facilitado" />
 								</div>
 
 								<div class="list__item--right">
@@ -152,7 +177,7 @@
 
 							<div class="list__item">
 								<div class="list__item--left">
-									<img src="img/fke/cloud.png" alt="Dados na nuvem e versão mobile" />
+									<img src="img/ico/cloud.png" alt="Dados na nuvem e versão mobile" />
 								</div>
 
 								<div class="list__item--right">
@@ -164,29 +189,37 @@
 					</div>
 
 					<div class="section__nav">
-						<button type="button" class="btn btn-floating btn-green"><i class="icon icon-arrow-top"></i></button>
-						<button type="button" class="btn btn-floating btn-green"><i class="icon icon-arrow-bottom"></i></button>
+						<button type="button" class="btn btn-floating btn-floating-top btn-green"><span>&dlcorn;</span></button>
+						<button type="button" class="btn btn-floating btn-floating-bottom btn-green"><span>&dlcorn;</span></button>
 					</div>
 				</div>
+			</div>
 
-				<figure class="section__image">
-					<img src="img/fke/jazida-faster.png" alt="Jazida Rapidez" />
-				</figure>
-			</section>
+			<figure class="section__image">
+				<img src="img/fke/jazida-faster.png" alt="Jazida Rapidez" />
+			</figure>
+		</section>
 
-			<section class="section">
-				<div class="center">
+		<section class="section">
+			<div class="section__bg">
+				<img src="img/bkg/section-green.png" alt="" />
+			</div>
+
+			<div class="center">
+				<div class="section__index">
 					<div class="section__block--left">
 						<h2>INTEGRAÇÃO</h2>
 
-						<p>Unificamos gestão e análise de processos minerários em uma plataforma simples e segura.</p>
+						<div class="section__block--text">
+							<p>Unificamos gestão e análise de processos minerários em uma plataforma simples e segura.</p>
+						</div>
 					</div>
 
 					<div class="section__block--right">
 						<div class="list">
 							<div class="list__item">
 								<div class="list__item--left">
-									<img src="img/fke/gear.png" alt="Ferramentas multifunção" />
+									<img src="img/ico/gear.png" alt="Ferramentas multifunção" />
 								</div>
 
 								<div class="list__item--right">
@@ -197,7 +230,7 @@
 
 							<div class="list__item">
 								<div class="list__item--left">
-									<img src="img/fke/lock.png" alt="Informações protegidas" />
+									<img src="img/ico/lock.png" alt="Informações protegidas" />
 								</div>
 
 								<div class="list__item--right">
@@ -209,35 +242,37 @@
 					</div>
 
 					<div class="section__nav">
-						<button type="button" class="btn btn-floating btn-brown"><i class="icon icon-arrow-top"></i></button>
-						<button type="button" class="btn btn-floating btn-brown"><i class="icon icon-arrow-bottom"></i></button>
+						<button type="button" class="btn btn-floating btn-floating-top btn-brown"><span>&dlcorn;</span></button>
+						<button type="button" class="btn btn-floating btn-floating-bottom btn-brown"><span>&dlcorn;</span></button>
 					</div>
 				</div>
+			</div>
 
-				<figure class="section__image">
-					<img src="img/fke/jazida-integration.png" alt="Jazida Integração" />
-				</figure>
-			</section>
+			<figure class="section__image">
+				<img src="img/fke/jazida-integration.png" alt="Jazida Integração" />
+			</figure>
+		</section>
 
-			<section class="section">
-				<div class="center">
-					<h3>Experimente grátis</h3>
+		<section class="section">
+			<div class="center">
+				<div class="section__index">
+					<h3>Experimente<br /> grátis</h3>
 
 					<form class="form"> 
 						<div class="form__group">
-							<input type="text" name="name" placeholder="Nome" />
+							<input type="text" class="form__style" name="name" placeholder="Nome" />
 						</div>
 
 						<div class="form__group">
-							<input type="text" name="company" placeholder="Empresa" />
+							<input type="text" class="form__style" name="company" placeholder="Empresa" />
 						</div>
 
 						<div class="form__group">
-							<input type="email" name="email" placeholder="E-mail" />
+							<input type="email" class="form__style" name="email" placeholder="E-mail" />
 						</div>
 
 						<div class="form__group">
-							<input type="tel" name="phone" placeholder="Telefone" />
+							<input type="tel" class="form__style" name="phone" placeholder="Telefone" />
 						</div>
 
 						<div class="form__group">
@@ -245,15 +280,20 @@
 						</div>
 					</form>
 				</div>
-			</section>
-    </main>
-
-		<footer>
-			<div class="center">
-				<p>© Todos os direitos reservados - Jazida 2017 <a href="mailto:contato@jazida.com" class="btn btn-link">contato@jazida.com</a></p>
-
-				<h3><a href="#this" class="btn btn-link"><img src="img/lgo/footer.png" alt="Jazida" /></a></h3>
 			</div>
-		</footer>
+
+			<figure class="section__image">
+				<img src="img/fke/jazida-try.png" alt="Jazida Experimente grátis" />
+			</figure>
+		</section>
+	</main>
+
+	<footer>
+		<div class="center">
+			<p>© Todos os direitos reservados - Jazida 2017 <a href="mailto:contato@jazida.com" class="btn btn-link">contato@jazida.com</a></p>
+
+			<h3><a href="#this" class="btn btn-link"><img src="img/lgo/logo-2.png" alt="Jazida" /></a></h3>
+		</div>
+	</footer>
   </body>
 </html>

@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/**
+* Arquivo responsavel pelo estilo do site  
+*
+* @version: 1.0
+*
+* Copyright(c) Todos os direitos reservados a Jazida
+*/ 
+
+/* IMPORTANDO BIBLIOTECAS
+________________________________________________________________ */
+
+@import 'normalize.css';
+
+
+/* General
+________________________________________________________________ */
+
+@import 'general/variables';
+@import 'mixins/mixins';
+@import 'general/structure';
+@import 'general/header';
+@import 'general/main';
+@import 'general/footer';
+
+/* Components
+________________________________________________________________ */
+
+@import 'components/buttons';
+@import 'components/form-fields';

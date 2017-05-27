@@ -1,0 +1,262 @@
+/**
+* MIXINS
+* @version: 1.0
+* Copyright(c) -- Jazida
+*/
+
+/* EXTERNAL MIXINS
+________________________________________________________________ */
+
+@import "buttons";
+@import "form-fields";
+
+/* BREAKPOINT
+________________________________________________________________ */
+
+@mixin tablet($layout: 6) {
+	@media  (min-width: #{$content-tablet}) {
+		@content;
+	}
+}
+
+@mixin tablet-landscape($layout: 12) {
+	@media (min-width: #{$content-tablet}) and (#{$landscape}) {
+		// @include with-layout($layout) {
+		// 	@content;
+		// }
+		@content;
+	}
+}
+
+@mixin desktop($layout: 12) {
+	@media (min-width: #{$content-desktop}) {
+		// @include with-layout($layout) {
+		// 	@content;
+		// }
+		@content;
+	}
+}
+
+@mixin large-desktop($layout: 12) {
+	@media (min-width: #{$content-large-desktop}) {
+		// @include with-layout($layout) {
+		// 	@content;
+		// }
+		@content;
+	}
+}
+
+@mixin retina {
+	@media
+		only screen and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (min--moz-device-pixel-ratio: 2),
+		only screen and (-o-min-device-pixel-ratio: 2/1),
+		only screen and (min-device-pixel-ratio: 2),
+		only screen and (min-resolution: 192dpi),
+		only screen and (min-resolution: 2dppx) {
+			@content;
+	}
+}
+
+@mixin phone-landscape {
+	@media only screen and (#{$landscape}) {
+		@content;
+	}
+}
+
+/* CLEARFIX
+	>> http://nicolasgallagher.com/micro-clearfix-hack/
+________________________________________________________________ */
+
+@mixin clearfix {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+/* CSS replacement
+	>> https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+________________________________________________________________ */
+
+@mixin text-hide ( $show-border: false ) {
+	font: "#{0/0} a";
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+
+	@if $show-border == false {
+		border: 0;
+	}
+}
+
+/* FONT-RELATED
+________________________________________________________________ */
+
+@mixin font-face($font-family-name, $font-family-filename, $path, $font-weight: 'normal', $font-style: 'normal') {
+	@font-face {
+		font-family: $font-family-name;
+		src: url('#{$path}#{$font-family-filename}.eot');
+		src: url('#{$path}#{$font-family-filename}.eot?#iefix') format('embedded-opentype'),
+				 url('#{$path}#{$font-family-filename}.woff') format('woff'),
+				 url('#{$path}#{$font-family-filename}.ttf') format('truetype'),
+				 url('#{$path}#{$font-family-filename}.svg##{$font-family-filename}') format('svg');
+		font-weight: $font-weight;
+		font-style: $font-style;
+	}
+}
+
+@mixin font-size($size) {
+	font-size: $size + px;
+	font-size: ($size / 10) + rem;
+}
+
+/* TRANSITION
+________________________________________________________________ */
+
+@mixin transition ($args) {
+	transition: $args;
+	-moz-transition: $args;
+	-webkit-transition: $args;
+	-o-transition: $args;
+}
+
+/* TRANSFORM
+________________________________________________________________ */
+
+@mixin transform ($type) {
+	-webkit-transform: $type;
+	-moz-transform: $type;
+	-ms-transform: $type;
+	transform: $type;
+}
+
+@mixin transform-origin ($type) {
+	-webkit-transform-origin: $type;
+	-moz-transform-origin: $type;
+	-ms-transform-origin: $type;
+	transform-origin: $type;
+}
+
+/* BACKGROUND-SIZE
+________________________________________________________________ */
+
+@mixin background-size ( $value: 100% ) {
+	-webkit-background-size: $value;
+	-moz-background-size: $value;
+	-o-background-size: $value;
+	background-size: $value;
+}
+
+/* BORDER-RADIUS
+________________________________________________________________ */
+
+@mixin border-radius($args: 5px){
+	-webkit-border-radius: $args;
+	-moz-border-radius: $args;
+	border-radius: $args;
+}
+
+/* MIXIN ANIMATION
+________________________________________________________________ */
+
+@mixin animation($args) {
+	-webkit-animation: $args;
+	-moz-animation: $args;
+	-o-animation: $args;
+	animation: $args;
+}
+
+/* MIXIN BOX SHADOW
+________________________________________________________________ */
+
+@mixin box-shadow($args) {
+	-webkit-box-shadow: $args;
+	-moz-box-shadow: $args;
+	box-shadow: $args;
+}
+
+/* MIXIN OPACITY
+________________________________________________________________ */
+
+@mixin opacity($args) {
+	opacity: $args;
+	$opacity-ie: $args * 100;
+	filter: "alpha(opacity=#{$opacity-ie})";
+}
+
+@mixin text-rotate ($args) {
+	/* Safari */
+	-webkit-transform: rotate($args);
+
+	/* Firefox */
+	-moz-transform: rotate($args);
+
+	/* IE */
+	-ms-transform: rotate($args);
+
+	/* Opera */
+	-o-transform: rotate($args);
+
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=floor(($args*4)/100) );
+}
+
+@mixin selection-custom($bg: #94bb24, $letter: #fff){
+	*::-moz-selection{
+		background: none repeat scroll 0 0 $bg;
+		color: $letter;
+		text-shadow: none;
+	}
+	*::selection{
+		background: none repeat scroll 0 0 $bg;
+		color: $letter;
+		text-shadow: none;
+	}
+	*::-webkit-selection{
+		background: none repeat scroll 0 0 $bg;
+		color: $letter;
+		text-shadow: none;
+	}
+}
+
+/* MIXIN KEYFRAMES
+________________________________________________________________ */
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+			@content;
+	}
+	@-moz-keyframes #{$name} {
+			@content;
+	}
+	@-ms-keyframes #{$name} {
+			@content;
+	}
+	@keyframes #{$name} {
+			@content;
+	}
+}
+
+/* Animation next button in Home */
+@include keyframes(loop-arrow) {
+	to {
+		@include transform(translateY(5px));
+	}
+}
+
+/* Animation loading bar */
+@include keyframes(loading-bar-spinner) {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}

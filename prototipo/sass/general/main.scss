@@ -1,0 +1,426 @@
+/**
+* Style HEADER
+* @version: 1.0
+* Copyright(c) -- Jazida
+*/
+
+/* MAIN
+________________________________________________________________ */
+
+main {
+  padding-top: 80px;
+}
+
+
+/* MAIN
+    >> Sections
+________________________________________________________________ */
+
+.section {
+  height: 95vh;
+  position: relative;
+  min-height: 750px;
+  max-height: 802px;
+  overflow: hidden;
+
+  .center {
+    height: 100%;
+  }
+
+  &__bg {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 6;
+
+    img {
+      @media (min-width: 1380px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__index {
+    position: relative;
+    z-index: 7;
+  }
+
+/* MAIN
+    >> Sections
+      >> First
+________________________________________________________________ */
+
+  &:first-child {
+    background-image: linear-gradient(to right, $color-green 5%,#3dbf8e 100%);
+    //background-color: $color-green;
+
+    .section__block--left {
+      @include transform(translateY(-50%));
+      position: relative;
+      top: 50%;
+      width: 38%;
+      z-index: 3;
+    }
+
+    figure {
+      height: 100%;
+      min-height: 750px;
+      max-height: 802px;
+      max-width: 50%;
+      min-width: 50%;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .overlay {
+      @include opacity(0.9);
+      //background-color: #3cb88a;
+      //box-shadow: inset 23px 0px 246px $color-green;
+      background-image: linear-gradient(to right, #30b77f 5%,#35de98 100%);
+      
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      z-index: 2;
+    }
+  }
+
+/* MAIN
+    >> Sections
+      >> Second
+________________________________________________________________ */
+
+  &:nth-child(2) {
+    // background: url('../img/bkg/section-brown.png') no-repeat center top;
+
+    // @media (min-width: 1380px) {
+    //   @include background-size;
+    // }
+
+    .center {
+      padding-top: 60px;
+      //z-index: 3;
+    }
+
+    h2 {
+      @include font-size(50);
+      color: $text-color-2;
+      display: block;
+      font-weight: $font-weight-light;
+      margin: 0 0 20px 0px;
+      text-align: center;
+    }
+
+    // figure {
+    //   display: block;
+    //   margin: 0;
+    //   text-align: center;
+    //   width: 100%;
+    // }
+
+    .section__image {
+      @include transform(translateX(-50%));
+      bottom: 0;
+      left: 50%;
+      margin: 0;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      z-index: 4;
+
+      
+    }
+  }
+
+/* MAIN
+    >> Sections
+      >> Third, Fourth, Fitth
+________________________________________________________________ */
+
+  &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+    // background: url('../img/bkg/section-green.png') no-repeat center top;
+
+    // @media (min-width: 1380px) {
+    //   @include background-size;
+    // }
+
+    .center {
+      padding-top: 60px;
+    }
+
+    .section__index {
+      display: flex;
+    }
+
+    h2 {
+      @include font-size(50);
+      color: $text-color-2;
+      font-weight: $font-weight-light;
+      margin: 0 0 20px 0px;
+    }
+
+    .section__block--left {
+      padding: 0 50px 0 40px;
+      flex-grow: 1;
+      width: 50%;
+    }
+
+    .section__block--right {
+      padding: 0 100px 0 50px;
+      flex-grow: 1;
+      width: 50%;
+    }
+
+    .section__image {
+      @include transform(translateX(-50%));
+      align-items: flex-end;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      left: 50%;
+      margin: 0;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 4;
+    }
+  }
+
+  /* MAIN
+    >> Sections
+      >> Fourth
+________________________________________________________________ */
+
+  &:nth-child(4) {
+    h2 {
+      color: $color-green;
+    }
+
+    .section__block--text {
+      p {
+        color: $text-color-2;
+      }
+    }
+
+    .list__item {
+      h5 {
+        color: $color-green;
+      }
+
+      p {
+        color: $text-color-2;
+      }
+    }
+  }
+
+  /* MAIN
+    >> Sections
+      >> Sixth
+________________________________________________________________ */
+
+  &:nth-child(6) {
+    background-color: $color-green;
+
+    h3 {
+      @include font-size(50);
+      color: $text-color-2;
+      font-weight: $font-weight-thin;
+      margin: 0 0 40px 0px;
+      text-transform: uppercase;
+    }
+
+    .section__index {
+      @include transform(translateY(-50%));
+      padding: 0 0 0 40px;
+      position: relative;
+      top: 50%;
+      width: 50%;
+      z-index: 3;
+    }
+    
+    .form {
+      &__group {
+        margin-bottom: 12px;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+    }
+
+    .section__image {
+      margin: 0;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+/* MAIN
+    >> Sections
+      >> Block
+________________________________________________________________ */
+
+  &__block {
+    &--left {
+      h2 {
+        @include font-size(48);
+        color: $color-white;
+        font-weight: $font-weight-light;
+        margin: 0 0 40px;
+        text-transform: uppercase;
+      }
+
+      .form {
+        padding-top: 10px;
+
+        h4 {
+          @include font-size(20);
+          color: $color-white;
+          font-weight: $font-weight-normal;
+          margin: 0 0 15px;
+          text-transform: uppercase;
+        }
+
+        &__group {
+          float: left;
+          margin: 0 0 15px;
+          width: 70%;
+        }
+
+        button {
+          @include font-size(13);
+          margin: 0 0 15px 10px;
+          padding: 8.5px 10px;
+        }
+
+        span {
+          @include font-size(16);
+          clear: both;
+          color: $color-white;
+        }
+      }
+    }
+
+    &--text {
+      p {
+        @include font-size(16);
+        font-weight: $font-weight-normal;
+        margin: 0 0 20px;
+      }
+    }
+  }
+
+/* MAIN
+    >> Sections
+      >> Data
+________________________________________________________________ */
+
+  &__data {
+    display: flex;
+    margin-bottom: 90px;
+    width: 100%;
+
+    div {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    p {
+      @include font-size(18);
+      color: $color-white;
+      margin: 0;
+      text-transform: uppercase;
+
+      strong {
+        @include font-size(25);
+        color: $color-green;
+        display: block;
+      }
+    }
+  }
+
+/* MAIN
+    >> Section
+      >> Nav
+________________________________________________________________ */
+
+  &__nav {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    z-index: 4;
+
+    button {
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+/* MAIN
+    >> Form
+________________________________________________________________ */
+
+.form {
+  @include clearfix;
+
+  &__group {
+   
+  }
+}
+
+/* MAIN
+    >> List
+________________________________________________________________ */
+
+.list {
+  &__item{
+    @include clearfix;
+    margin-bottom: 20px;
+
+    &--left {
+      float: left;
+      text-align: center;
+      width: 20%;
+    }
+
+    &--right {
+      float: right;
+      padding-left: 5px;
+      width: 78%;
+    }
+
+    h5 {
+      @include font-size(16);
+      color: $color-white;
+      font-weight: $font-weight-bold;
+      margin: 0 0 5px 0;
+      text-transform: uppercase;
+    }
+
+    p {
+      @include font-size(16);
+      font-weight: $font-weight-normal;
+      margin: 0 0 20px;
+    }
+  }
+}
