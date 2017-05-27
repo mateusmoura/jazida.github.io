@@ -37,30 +37,7 @@ class ExplorerJazida extends Component {
       loading       : false
     }
 
-    // setTimeout(()=>{
-    //   console.log('set');
-    //   this.setState({loading: true})
-    // }, 2000);
-
-    // setTimeout(() => {
-    //   $('section .overlay').addClass('overlayAnimate').animate({
-    //     width: '96px',
-    //     left: '50%'
-    //   }, '500');
-
-    //   $('.jAnimateTop').animate({
-    //     top: '-360px'
-    //   }, '500', function () {
-    //     $(this).css('top', 0);
-    //   });
-
-    //   $('.jAnimate').fadeOut('500', function () {
-    //     this.setState({processData: {nome: 'Mateus'}})
-    //   }.bind(this));      
-    // }, 2000);
-
     this.sendForm   = this.sendForm.bind(this);
-    //this.changeTab  = this.changeTab.bind(this);
   }
 
   componentDidMount () {
@@ -230,6 +207,107 @@ class ExplorerJazida extends Component {
       </div>
     )
   };
+}
+
+class RegisterForm extends Component {
+
+  constructor () {
+    super();
+
+    this.state = {
+      name            : '',
+      company         : '',
+      email           : '',
+      phone           : '',
+      password        : '',
+      confirmpass     : '',
+      loading         : false
+    }
+
+    this.sendForm     = this.sendForm.bind(this);
+  }
+
+  sendForm (event) {
+    event.preventDefault();
+
+    this.setState({loading: true});
+
+    if(this.state.password !== this.state.confirmpass) {
+      new ErrorPublish().ErrorPublish({field: 'confirmpass', msg: 'Senha deve ser a mesma digitada no campo anterior'});
+    }
+
+    let data = new FormData();
+
+    data.append('json', JSON.stringify({
+        nome: this.state.name,
+        empresa: this.state.company,
+        email: this.state.email,
+        telefone: this.state.phone.replace(' ', '').replace(' ', '').replace('(', '').replace(')', '').replace('-', ''),
+        senha: this.state.password
+      }));
+
+    fetch('https://api.greenstone.com.br/usuarios', {method: 'POST', cache: 'default', body: data})
+      .then(resp => resp.json())
+      .then(resp => {
+        console.log(resp);
+
+        if(resp.erro) {
+          new ErrorPublish().ErrorPublish({field: 'process', msg: process.erro});
+        } else {
+          //asdf 
+        }
+
+        this.setState({loading: false});
+      });
+  }
+
+  setData (objName, event) {
+    let obj = {};
+
+    obj[objName] = event.target.value;
+
+    this.setState(obj);
+  }
+
+  changeMessage (event) {
+    console.log(event)
+    event.target.setCustomValidity(event.target.dataset.msg);
+  }
+  
+
+  render () {
+    return (
+      <form className="form" onSubmit={this.sendForm} method="POST"> 
+        <div className="form__group">
+          <CustomInput id="name" required="required" className="form__style" type="text" name="name" placeholder="Nome" value={this.state.name} onChange={this.setData.bind(this, 'name')} />
+        </div>
+
+        <div className="form__group">
+          <CustomInput id="company" required="required" className="form__style" type="text" name="company" placeholder="Empresa" value={this.state.company} onChange={this.setData.bind(this, 'company')} />
+        </div>
+
+        <div className="form__group">
+          <CustomInput id="email" required="required" className="form__style" type="email" name="email" placeholder="E-mail" value={this.state.email} onChange={this.setData.bind(this, 'email')} />
+        </div>
+
+        <div className="form__group">
+          <CustomInput mask="(99) \9 9999-9999" maskChar="_" required="required" id="phone" className="form__style" type="tel" name="phone" placeholder="Telefone" value={this.state.phone} onChange={this.setData.bind(this, 'phone')} />
+        </div>
+
+        <div className="form__group">
+          <CustomInput id="password" className="form__style" required="required" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" type="password" name="password" placeholder="Senha (Utilize letras e números)" value={this.state.password} onChange={this.setData.bind(this, 'password')} />
+        </div>
+
+        <div className="form__group">
+          <CustomInput id="confirmpass" className="form__style" required="required" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" type="password" name="confirmpass" placeholder="Confirmação de Senha" value={this.state.confirmpass} onChange={this.setData.bind(this, 'confirmpass')} />
+        </div>
+
+        <div className="form__group">
+          <button type="submit" className="btn btn-flat btn-white">Criar minha conta</button>
+        </div>
+      </form>
+    )
+  }
 }
 
 export default class Home extends Component {
@@ -511,27 +589,7 @@ export default class Home extends Component {
               <ScrollAnimation animateIn="fadeIn" infinityAnimation={false}>
                 <h3>Experimente<br /> grátis</h3>
 
-                <form className="form"> 
-                  <div className="form__group">
-                    <input type="text" className="form__style" name="name" placeholder="Nome" />
-                  </div>
-
-                  <div className="form__group">
-                    <input type="text" className="form__style" name="company" placeholder="Empresa" />
-                  </div>
-
-                  <div className="form__group">
-                    <input type="email" className="form__style" name="email" placeholder="E-mail" />
-                  </div>
-
-                  <div className="form__group">
-                    <input type="tel" className="form__style" name="phone" placeholder="Telefone" />
-                  </div>
-
-                  <div className="form__group">
-                    <button type="submit" className="btn btn-flat btn-white">Criar minha conta</button>
-                  </div>
-                </form>
+                <RegisterForm />
               </ScrollAnimation>
             </div>
           </div>

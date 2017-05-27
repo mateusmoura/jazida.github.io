@@ -36,7 +36,7 @@ export default class CustomInput extends Component {
     } else {
       html = (
         <div className="form__group">
-          <input {...this.props} />
+          <input {...this.props} className={this.state.errorMessage ?  this.props.className + ' error' : this.props.className} />
           <span className="error">{this.state.errorMessage}</span>
         </div>
       )

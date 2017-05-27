@@ -2861,6 +2861,8 @@ ________________________________________________________________ */ }
       z-index: 3; }
     .section:nth-child(6) .form__group {
       margin-bottom: 12px; }
+      .section:nth-child(6) .form__group span.error {
+        margin: 5px 0 0 0; }
     .section:nth-child(6) .form button {
       margin-top: 10px; }
     .section:nth-child(6) .section__image {
